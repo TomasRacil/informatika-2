@@ -86,3 +86,19 @@ Používají se ke kontrole, zda se hodnota nachází v sekvenci (např. v řet�
 "a" in "auto"  # True  
 "z" in "auto"  # False  
 ```
+---
+## **Cvičení**
+
+### **1. Matematické operace**
+Zeptejte se uživatele na dvě celá čísla. Vypište výsledky:
+- Sčítání
+- Násobení
+- Umocňování (první číslo na druhou)
+- Zbytek po dělení (modulo)
+
+### **2. Detektiv**
+Zeptejte se uživatele na jeho oblíbenou větu.
+Pomocí operátoru `in` zjistěte, zda věta obsahuje slovo "Python". Vypište True nebo False.
+
+### **3. Dělitelnost**
+Načtěte číslo. Zjistěte (True/False), zda je dělitelné 5 A ZÁROVEŇ 10.

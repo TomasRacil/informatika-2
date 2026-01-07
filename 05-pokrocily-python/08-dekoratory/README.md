@@ -97,3 +97,14 @@ def muj_dekorator(funkce):
 * **Měření času:** Zjistit, jak dlouho funkce běží.  
 * **Autentizace:** Ověřit, zda má uživatel právo (např. `@login_required` ve webových aplikacích).  
 * **Opakování:** Zkusit funkci zavolat znovu, pokud selže (např. při výpadku sítě).
+---
+## **Cvičení**
+
+### **1. Měřič času**
+Napište dekorátor `zmer_cas`, který změří, jak dlouho funkce běžela (použijte `time.time()`).
+- Před spuštěním funkce si uložte startovní čas.
+- Po spuštění funkce si uložte koncový čas.
+- Vypište rozdíl.
+
+### **2. Aplikace**
+Vytvořte funkci `dlouha_operace`, která jen uspí program na 1 sekundu (`time.sleep(1)`). Obalte ji dekorátorem a ověřte, že vypíše dobu trvání cca 1.0s.

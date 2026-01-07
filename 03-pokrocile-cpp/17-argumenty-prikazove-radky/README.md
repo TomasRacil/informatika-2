@@ -68,3 +68,14 @@ for (int i = 1; i < argc; ++i) {
     }  
 }
 ```
+---
+## **Cvičení**
+
+### **1. Sčítačka**
+Napište program, který sečte všechna celá čísla předaná jako argumenty příkazové řádky.
+Příklad: `./scitac 10 20 5` -> Vypíše 35.
+
+### **2. Jednoduchý přepínač**
+Upravte program tak, aby:
+- Při spuštění s přepínačem `-v` vypsal verzi programu (např. "v1.0").
+- Jinak vypsal nápovědu, jak ho používat.

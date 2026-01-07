@@ -50,3 +50,18 @@ async def main():
     # Spustí vše najednou v rámci jedné smyčky!
     await asyncio.gather(uloh("A"), uloh("B"), uloh("C"))
 ```
+
+---
+## **Cvičení**
+
+### **1. Snídaně**
+Napište dvě asynchronní funkce:
+- `uvar_kavu()` (trvá 2 sekundy).
+- `opeci_toust()` (trvá 1 sekundu).
+Spusťte je **souběžně** pomocí `asyncio.gather` a změřte celkový čas (měl by být cca 2 sekundy).
+
+### **2. Sekvence vs. Paralelismus**
+Zkuste ty samé funkce spustit pomocí `await` za sebou (uvnitř `main`).
+- `await uvar_kavu()`
+- `await opeci_toust()`
+Změřte čas (měl by být 3 sekundy).

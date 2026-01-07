@@ -62,4 +62,18 @@ soubor.flush() # Vynutit odeslání
 - Přesvědčte se, že server běží na stejném `HOST` a `PORT`.
 - Pokud zkoušíte komunikaci mezi dvěma počítači, místo `127.0.0.1` použijte reálnou IP adresu (např. `192.168.x.x`) nebo `'0.0.0.0'` pro naslouchání na všech rozhraních.
 - Zkontrolujte firewall.
-```
+---
+## **Cvičení**
+
+### **1. Jednoduchý server**
+Vytvořte serverový skript, který:
+- Naslouchá na portu 65432.
+- Přijme spojení.
+- Pošle klientovi zprávu "Vítej na serveru".
+- Spojení uzavře.
+
+### **2. Jednoduchý klient**
+Vytvořte klientský skript, který:
+- Se připojí na 127.0.0.1:65432.
+- Přijme zprávu (pomocí `recv(1024)`).
+- Vypíše ji a skončí.

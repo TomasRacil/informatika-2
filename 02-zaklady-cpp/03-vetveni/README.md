@@ -89,3 +89,20 @@ catch (...) {
     std::cerr << "Byla zachycena neznámá chyba!" << std::endl;
 }
 ```
+---
+## **Cvičení**
+
+### **1. Hodnocení studentů**
+Napište program, který načte počet bodů z testu (0-100) a vypíše známku:
+- 90-100: A
+- 80-89: B
+- 70-79: C
+- 60-69: D
+- 0-59: F
+Použijte `if` / `else if` / `else`.
+
+### **2. Dny v týdnu**
+Pomocí `switch` vytvořte program, který podle zadaného čísla (1-7) vypíše název dne v týdnu. Pokud uživatel zadá jiné číslo, vypište "Neplatný den".
+
+### **3. Bezpečné dělení**
+Vytvořte program, který načte dvě čísla a provede dělení. Použijte `try-catch` blok pro ošetření dělení nulou (vyhoďte výjimku, pokud je dělitel 0).

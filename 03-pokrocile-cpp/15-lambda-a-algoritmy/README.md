@@ -119,3 +119,17 @@ std::sort(v.begin(), v.end(), [](int a, int b) {
 });
 // v nyní obsahuje {9, 7, 5, 2, 1}
 ```
+
+---
+## **Cvičení**
+
+### **1. Filtrace**
+Máte vektor čísel `{1, 5, 8, 9, 12, 4, 7}`.
+Použijte `std::count_if` s lambda funkcí, abyste zjistili, kolik čísel je větších než 6.
+
+### **2. Vlastní řazení**
+Máte vektor stringů `{"Jablko", "Banán", "Ananas", "Hruška"}`.
+Seřaďte je pomocí `std::sort` **podle délky slova** (od nejkratšího).
+
+### **3. Transformace**
+Máte vektor čísel. Pomocí `std::transform` vytvořte nový vektor, který bude obsahovat druhé mocniny čísel z prvního vektoru.

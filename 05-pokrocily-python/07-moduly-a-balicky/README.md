@@ -143,3 +143,13 @@ Když Python načítá `hrac.py`, narazí na import `hra`. Jde načíst `hra.py`
        from hra import game_over   
        game_over()  
     ```
+---
+## **Cvičení**
+
+### **1. Vlastní modul**
+1. Vytvořte soubor `geometrie.py`, do kterého umístíte funkci `obvod_kruhu(r)`. Přidejte do něj blok `if __name__ == "__main__":`, který funkci otestuje výpisem.
+2. Vytvořte soubor `hlavni.py`, který importuje `geometrie` a zavolá `obvod_kruhu`.
+3. Spusťte `hlavni.py` a ověřte, že se nevypisuje testovací kód z `geometrie.py`.
+
+### **2. Import specific**
+V souboru `hlavni.py` upravte import tak, abyste mohli volat funkci přímo jako `obvod_kruhu(5)` (bez tečkové notace).

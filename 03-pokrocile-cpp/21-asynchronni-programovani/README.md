@@ -98,3 +98,13 @@ Na rozdíl od Pythonu nebo JavaScriptu, kde má jazyk vestavěný "Event Loop", 
 | **`std::thread`** | Nízkoúrovňové řízení, dlouho běžící vlákna. | Plná kontrola. |
 | **`std::async`** | Jednorázové výpočty na pozadí. | Snadné předání výsledku a výjimek. |
 | **`co_await`** | I/O operace, tisíce souběžných úkolů. | Minimální režie (lehčí než vlákna). |
+
+---
+## **Cvičení**
+
+### **1. Async výpočet**
+Použijte `std::async` k výpočtu faktoriálu čísla 10 na pozadí.
+Mezitím v hlavním vlákně vypisujte tečky ("..."), dokud výpočet neskončí (použijte `wait_for` s nulovým časem nebo jen prostě zavolejte `.get()` na konci).
+
+### **2. Promise / Future**
+Vytvořte vlákno, které bude čekat na signál (pomocí `std::future<void>`), aby začalo pracovat. Hlavní vlákno pošle signál pomocí `std::promise<void>` po stisku klávesy Enter.

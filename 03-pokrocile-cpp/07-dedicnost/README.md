@@ -95,3 +95,16 @@ void Student::pozdrav() {
 
 Praktickou ukázku všech těchto konceptů najdeš v souboru `main.cpp`.
 
+
+---
+## **Cvičení**
+
+### **1. Zvířata**
+1. Vytvořte základní třídu `Zivocich` s `protected` atributem `jmeno`.
+2. Vytvořte konstruktor `Zivocich(string j)`.
+3. Vytvořte odvozenou třídu `Pes`, která přidá atribut `rasa`.
+4. Vytvořte konstruktor `Pes(string j, string r)`, který správně zavolá konstruktor předka.
+5. Vytvořte metodu `stekej()`, která vypíše: "[jmeno] ([rasa]): Haf!".
+
+### **2. Ověření přístupu**
+Zkuste ve třídě `Zivocich` změnit `protected` na `private`. Půjde kód zkompilovat? Proč?

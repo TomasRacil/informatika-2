@@ -98,3 +98,15 @@ if (!soubor.is_open()) {
     // Zde je vhodné program ukončit, protože nemůže pokračovat  
 }
 ```
+---
+## **Cvičení**
+
+### **1. Deníček**
+Vytvořte program, který umožní uživateli zadávat textové poznámky.
+- Ukládejte každý řádek do souboru `denicek.txt`.
+- Zadávání skončí, když uživatel napíše slovo "KONEC".
+
+### **2. Čtečka souboru**
+Napište program, který otevře soubor `denicek.txt` (vytvořený v předchozím úkolu) a vypíše jeho obsah na obrazovku.
+- Před každý řádek přidejte číslo řádku (např. "1: Můj první zápis").
+- Ošetřete situaci, kdy soubor neexistuje.

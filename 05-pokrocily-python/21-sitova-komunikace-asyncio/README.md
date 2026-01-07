@@ -42,3 +42,18 @@ writer.close()
 
 - **Klasické sockety (sekce 19):** Jednoduché skripty, výuka principů sítí.
 - **AsyncIO Sítě (sekce 21):** Produkční aplikace, vysoký počet klientů, moderní Python projekty.
+
+---
+## **Cvičení**
+
+### **1. Echo Server**
+Napište asynchronní server, který:
+- Přečte data od klienta (do 100 bajtů).
+- Data okamžitě pošle zpátky (Echo).
+- Uzavře spojení.
+
+### **2. Testovací klient**
+Napište asynchronního klienta, který:
+- Pošle zprávu "Halo!".
+- Přečte odpověď.
+- Ověří, že odpověď je "Halo!".

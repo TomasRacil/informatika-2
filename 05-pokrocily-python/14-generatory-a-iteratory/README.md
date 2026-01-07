@@ -57,3 +57,13 @@ Podobně jako máme *List Comprehension* (`[x for x in data]`), máme i *Generat
 * **Velká data:** Čtení obřích souborů řádek po řádku (CSV, logy).  
 * **Nekonečné sekvence:** Generování čísel, signálů, dat z senzorů.  
 * **Pipelining:** Řetězení operací zpracování dat bez nutnosti mezivýsledků v RAM.
+---
+## **Cvičení**
+
+### **1. Odpočítávání**
+Napište generátorovou funkci `countdown(n)`, která vrací čísla od `n` do 0 (pomocí `yield`).
+Použijte ji v cyklu `for`.
+
+### **2. Nekonečná řada**
+Napište generátor `sud_prijmy()`, který vrací posloupnost 0, 2, 4, 6... do nekonečna.
+V hlavním programu si vyžádejte prvních 5 čísel (pomocí `next()`) a pak skončete. (Pozor na nekonečný cyklus!)

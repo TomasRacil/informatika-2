@@ -70,3 +70,17 @@ Někdy potřebujeme vypsat znaky, které mají speciální význam (např. odř�
 * `\t` - Tabulátor  
 * `\"` nebo `\'` - Vypíše uvozovku, aniž by ukončil řetězec.  
 * `\\` - Vypíše zpětné lomítko.
+---
+## **Cvičení**
+
+### **1. Pozdrav**
+Vypište do konzole text "Ahoj světe, učím se Python!"
+
+### **2. Vizitka (f-string)**
+Vytvořte proměnné `jmeno` (text) a `vek` (číslo). Pomocí f-stringu vypište větu: "Jmenuji se [jmeno] a je mi [vek] let."
+
+### **3. Seznam barev**
+Pomocí jedné funkce `print` vypište následující barvy, každou na nový řádek (použijte parametr `sep`):
+- Červená
+- Zelená
+- Modrá

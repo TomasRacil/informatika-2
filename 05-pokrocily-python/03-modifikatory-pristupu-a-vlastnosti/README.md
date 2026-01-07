@@ -69,3 +69,15 @@ jan.vek = -5    # Setter zachytí chybu
 ```
 
 Toto je **Pythonic way** – kód je čistý, čitelný a data jsou chráněna.
+---
+## **Cvičení**
+
+### **1. Bankovní účet**
+Vytvořte třídu `Ucet`.
+1. V `__init__` nastavte privátní atribut `__zustatek` na 0.
+2. Vytvořte property `zustatek` (getter), která vrátí aktuální stav.
+3. Vytvořte metodu `vloz(castka)`, která zvýší zůstatek (pouze pokud je částka kladná).
+4. Vytvořte setter pro `zustatek`, který nedovolí nastavit zápornou hodnotu (vypíše chybu).
+
+### **2. Test bezpečnosti**
+Zkuste vytvořit instanci účtu a přistoupit přímo k `__zustatek`. Co se stane?

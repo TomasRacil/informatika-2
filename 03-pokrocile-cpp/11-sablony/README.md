@@ -85,3 +85,14 @@ int main() {
 ```
 
 Šablony jsou základním kamenem **Standard Template Library (STL)**, která poskytuje předpřipravené a efektivní kontejnery, iterátory a algoritmy.
+---
+## **Cvičení**
+
+### **1. Šablona funkce**
+Vytvořte šablonu funkce `vymen(T& a, T& b)`, která prohodí hodnoty dvou proměnných libovolného typu. Vyzkoušejte pro `int`, `double` a `string`.
+
+### **2. Šablona třídy**
+Napište šablonovou třídu `Schranka<T>`, která bude uchovávat jednu hodnotu typu `T`.
+- Metodu `vloz(T data)`
+- Metodu `T vyzvedni()`
+Vyzkoušejte pro různá data.

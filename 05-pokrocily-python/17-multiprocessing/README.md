@@ -61,3 +61,14 @@ Protože procesy nesdílejí paměť, nemůžete jednoduše zapsat do globální
 * **Value, Array**: Sdílená paměť (Shared Memory), která obchází izolaci (viz další lekce).
 
 Při posílání dat mezi procesy dochází k tzv. **Picklingu** (serializaci), což může být pomalé u velkých objemů dat.
+---
+## **Cvičení**
+
+### **1. CPU makačka**
+Vytvořte funkci `narocna_prace()`, která sečte čísla od 1 do 10 milionů.
+Spusťte tuto funkci 4x **paralelně** pomocí `multiprocessing.Process`.
+Sledujte vytížení procesoru (např. ve správci úloh/htop), zda se využila všechna jádra.
+
+### **2. Posílání výsledků**
+Upravte funkci tak, aby výsledek vložila do `multiprocessing.Queue`.
+V hlavním procesu () vytáhněte výsledky z fronty a sečtěte je.

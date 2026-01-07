@@ -55,3 +55,14 @@ Máme několik možností, jak získat data ze souboru:
 
 * **`write(string)`** – Zapíše řetězec. Pozor: nepřidává automaticky nový řádek `\n`, musíte ho tam dopsat ručně.  
 * **`writelines(list)`** – Zapíše seznam stringů.
+---
+## **Cvičení**
+
+### **1. Zápis**
+Vytvořte program, který vytvoří soubor `basnicka.txt` a zapíše do něj 4 verše nějaké básně (každý na nový řádek).
+
+### **2. Čtení**
+Otevřete soubor `basnicka.txt` (z předchozího úkolu) a vypište jeho obsah do konzole tak, že před každý řádek přidáte **odrážku** (`-> `).
+
+### **3. Přidávání**
+Otevřete soubor `basnicka.txt` v režimu `append` a přidejte na konec ještě jeden řádek (podpis autora).

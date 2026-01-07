@@ -151,3 +151,15 @@ while (std::regex_search(startHledani, vstup.cend(), shody, vzor_barva))
 }
 // Vypíše: Barvy, red, green, blue
 ```
+---
+## **Cvičení**
+
+### **1. Čas ve formátu HH:MM**
+Napište regulární výraz, který ověří, zda je řetězec platným časem (00:00 až 23:59). Pozor na neplatné časy jako 25:99.
+
+### **2. Hashtagy**
+V extrahujte z textu všechny hashtagy (slova začínající znakem `#`).
+Text: "Dnes je krásně #slunce #pohoda #programovani"
+
+### **3. Cenzura**
+Nahraďte v textu všechna telefonní čísla (ve formátu 9 čísel) řetězcem "[SKRYTO]".

@@ -79,3 +79,13 @@ int main() {
 ```
 
 Ukázku kompletního kódu najdete v souboru main.cpp.
+---
+## **Cvičení**
+
+### **1. Počítadlo instancí**
+Vytvořte třídu `Hrac`.
+1. Přidejte jí private statický atribut `pocetHracu`.
+2. V konstruktoru ho inkrementujte.
+3. V destruktoru ho dekrementujte.
+4. Přidejte public statickou metodu `getPocet()`.
+5. V `main` vytvořte několik hráčů (některé i v bloku `{}` či dynamicky) a průběžně vypisujte aktuální počet.

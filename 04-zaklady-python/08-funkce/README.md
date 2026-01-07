@@ -74,3 +74,17 @@ print(na_druhou_lambda(5)) # Vypíše 25
 
 * **Lokální proměnné:** Proměnné definované uvnitř funkce. Jsou viditelné pouze uvnitř této funkce.  
 * **Globální proměnné:** Proměnné definované v hlavním těle programu. Jsou viditelné všude (ale pro jejich úpravu uvnitř funkce je potřeba klíčové slovo `global`, což se obecně nedoporučuje).
+---
+## **Cvičení**
+
+### **1. Obsah obdélníku**
+Napište funkci `obsah(a, b)`, která vrátí obsah obdélníku.
+Vyzkoušejte ji s hodnotami od uživatele.
+
+### **2. Pozdrav s časem**
+Napište funkci `pozdrav(jmeno, cas="ráno")`.
+- Pokud zavolám `pozdrav("Jana")`, vypíše "Dobré ráno, Jana".
+- Pokud zavolám `pozdrav("Petr", "večer")`, vypíše "Dobrý večer, Petr".
+
+### **3. Lambda násobička**
+Vytvořte lambda funkci, která přijme číslo a vrátí jeho trojnásobek. Uložte ji do proměnné `nasob` a otestujte.

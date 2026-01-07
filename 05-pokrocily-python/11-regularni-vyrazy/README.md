@@ -128,3 +128,16 @@ Mění chování regexu. Předávají se jako poslední parametr.
 ```python
 re.search(r"ahoj", "AHOJ světe", re.IGNORECASE) # Najde shodu  
 ```
+---
+## **Cvičení**
+
+### **1. Hledání dat**
+Máte text: `"Termíny jsou 12.01.2023, 5.5.2023 a také 31.12.2023."`
+Pomocí `re.findall` najděte všechna data. Zkuste vzor, který zachytí formát DD.MM.YYYY (nápověda: `\d{1,2}\.` ...).
+
+### **2. Validace e-mailu**
+Napište regex pro jednoduchou validaci e-mailu (stačí zkontrolovat, že obsahuje zavináč a tečku v doméně). Otestujte ho na řetězcích `"jan@novak.cz"` (projde) a `"jan.novak.cz"` (neprojde).
+
+### **3. Cenzura**
+Máte větu: `"Tajné heslo je tajne123."`
+Pomocí `re.sub` nahraďte všechna čísla znakem `X`. Výsledek: `"Tajné heslo je tajneXXX."`

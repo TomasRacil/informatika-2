@@ -117,3 +117,24 @@ print(student.get("adresa", "Neznámá adresa"))
 * `student.keys()` – vrátí klíče.  
 * `student.values()` – vrátí hodnoty.  
 * `student.items()` – vrátí páry (klíč, hodnota).
+---
+## **Cvičení**
+
+### **1. Nákupní seznam (List)**
+Vytvořte seznam `nakup`, který obsahuje: "chleba", "máslo", "jablka".
+1. Přidejte na konec "mléko".
+2. Odeberte "máslo".
+3. Vypište, kolik položek je v seznamu (`len()`).
+
+### **2. Mocniny (List Comprehension)**
+Pomocí list comprehension vytvořte seznam druhých mocnin čísel od 0 do 9. Výsledek by měl být `[0, 1, 4, 9, ...]`.
+
+### **3. Telefonní seznam (Dict)**
+Vytvořte slovník, kde klíčem je jméno a hodnotou telefonní číslo.
+1. Vypište číslo pro "Petra".
+2. Přidejte nový kontakt "Jana".
+3. Vypište všechny kontakty (klíče).
+
+### **4. Unikátní čísla (Set)**
+Máte seznam `[1, 2, 2, 3, 1, 4, 5, 5]`.
+Převeďte ho na množinu a vypište výsledek, abyste se zbavili duplicit.

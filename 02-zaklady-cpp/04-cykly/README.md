@@ -45,3 +45,16 @@ do {
 
 * `break`: Okamžitě ukončí celý cyklus (nejen aktuální iteraci). Program pokračuje prvním příkazem za cyklem.  
 * `continue`: Ukončí pouze aktuální iteraci a skočí na začátek další iterace, kde se znovu vyhodnotí podmínka.
+---
+## **Cvičení**
+
+### **1. Malá násobilka**
+Pomocí cyklu `for` vypište malou násobilku čísla 5 (5, 10, 15, ..., 50).
+
+### **2. Součet čísel**
+Pomocí cyklu `while` nechte uživatele zadávat čísla, dokud nezadá 0. Na konci vypište součet všech zadaných čísel.
+
+### **3. Hádání čísla**
+Vytvořte jednoduchou hru, kde program myslí číslo (např. 42) a uživatel hádá.
+- Použijte `do-while` cyklus.
+- Program bude opakovat výzvu k hádání, dokud uživatel neuhodne správně.

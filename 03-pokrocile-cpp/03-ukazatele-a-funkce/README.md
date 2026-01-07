@@ -127,3 +127,21 @@ int main() {
     return 0;
 }
 ```
+
+---
+## **Cvičení**
+
+### **1. Prohození čísel (Swap)**
+Napište funkci `void prohod(int* a, int* b)`, která prohodí hodnoty dvou proměnných.
+- V `main` vytvořte dvě čísla, vypište je, zavolejte funkci a vypište je znovu pro ověření.
+
+### **2. Generator pole**
+Napište funkci, která:
+- Přijme velikost pole jako argument.
+- Dynamicky alokuje pole této velikosti.
+- Naplní ho samými nulami.
+- Vrátí ukazatel na toto pole.
+- (Nezapomeňte v `main` paměť uvolnit!)
+
+### **3. Změna pole**
+Vytvořte funkci, která přijme pole (ukazatel a velikost) a všechna čísla v něm vynásobí dvěma.

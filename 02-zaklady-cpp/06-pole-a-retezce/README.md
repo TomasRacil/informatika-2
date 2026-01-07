@@ -97,3 +97,19 @@ int matice[2][3] = {
 // Přístup k prvku v prvním řádku (index 0) a druhém sloupci (index 1)  
 int prvek = matice[0][1]; // prvek bude 2  
 ```
+---
+## **Cvičení**
+
+### **1. Statistika pole**
+Vytvořte pole pro uložení 5 celých čísel (načtěte je od uživatele).
+- Vypočtěte a vypište jejich součet.
+- Vypočtěte a vypište průměr.
+
+### **2. Maximum v poli**
+Mějte pole čísel (např. `{10, 5, 23, 8, 12}`). Pomocí cyklu najděte a vypište největší číslo v tomto poli.
+
+### **3. Spojování jmen**
+Napište program, který:
+1. Načte křestní jméno a příjmení do proměnných typu `std::string`.
+2. Vytvoří třetí proměnnou a spojí je dohromady (s mezerou).
+3. Vypíše celé jméno a počet jeho znaků (délku).

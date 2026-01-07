@@ -57,3 +57,16 @@ Argumenty se zadávají za název souboru oddělené mezerou.
 ```python
 python main.py Petr --vek 25  
 ```
+---
+## **Cvičení**
+
+### **1. Pozdrav (sys.argv)**
+Napište skript, který přijme jméno z terminálu a pozdraví.
+1. Pokud uživatel nezadá argument, vypište: "Chyba: Zadej jméno."
+2. Pokud zadá "Petr", vypište: "Ahoj Petr".
+
+### **2. Mocnina (argparse)**
+Napište skript pomocí `argparse`.
+- Přijme povinný argument `cislo` (int).
+- Přijme volitelný argument `--mocnina` (int, default=2).
+- Vypíše výsledek umocnění.

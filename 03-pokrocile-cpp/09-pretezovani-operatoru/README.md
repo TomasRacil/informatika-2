@@ -98,3 +98,13 @@ Kromě `+`, `==` a `<<` se často přetěžují i další operátory pro intuiti
 
 
 Praktickou ukázku přetěžování operátorů `+`, `==` a `<<` najdete v souboru `main.cpp`.
+---
+## **Cvičení**
+
+### **1. Komplexní čísla**
+Vytvořte třídu `KomplexniCislo` (reálná a imaginární část).
+1. Přetěžte operátor `+` tak, abyste mohli sečíst dvě komplexní čísla (sečtou se reálné části a imaginární části zvlášť).
+2. Přetěžte operátor `<<` pro hezký výpis ve formátu "a + bi".
+
+### **2. Porovnání**
+Přetěžte operátor `==`, který vrátí `true`, pokud jsou dvě komplexní čísla shodná (mají stejnou reálnou i imaginární část).

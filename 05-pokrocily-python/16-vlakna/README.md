@@ -51,3 +51,15 @@ Proto i v Pythonu musíme používat:
 ## **4. Bezpečná komunikace: `queue.Queue`**
 
 Zatímco v C++ jsme museli `std::vector` chránit mutexem, Python nabízí `queue.Queue`, která je **Thread-Safe**. Můžete do ní bezpečně vkládat data z více vláken bez zamykání.
+---
+## **Cvičení**
+
+### **1. Paralelní čekání**
+Importujte `time` a `threading`.
+1. Vytvořte funkci `cekej(sekund)`, která jen spí (`time.sleep`).
+2. Spusťte dvě vlákna, každé čeká 2 sekundy.
+3. Změřte celkový čas běhu programu. Měl by být cca 2 sekundy, nikoliv 4. Proč?
+
+### **2. Zamykání**
+Mějte globální proměnnou `bankovni_ucet = 0`.
+Spusťte 100 vláken, každé přičte 1. Použijte `threading.Lock`, abyste zajistili, že výsledek bude vždy přesně 100 (bez zámku by mohl být menší kvůli Race Condition).

@@ -52,3 +52,14 @@ V OOP vzniká stromová struktura (hierarchie). Je užitečné vědět, kam obje
 
 * `isinstance(objekt, Trida)` vrátí `True`, pokud je objekt instancí dané třídy nebo jejího potomka.  
 * Každý `Pes` je zároveň `Zvire`, ale ne každé `Zvire` je `Pes`.
+---
+## **Cvičení**
+
+### **1. E-shop**
+1. Vytvořte třídu `Produkt` (nazev, cena).
+2. Vytvořte třídu `Elektronika`, která dědí z `Produkt` a přidává `zaruka` (v měsících).
+3. Přepište konstruktor v `Elektronika` a použijte `super()`.
+4. Vytvořte třídu `Obleceni`, která dědí z `Produkt` a přidává `velikost`.
+
+### **2. Výpis**
+Přidejte do `Produkt` metodu `info()`. Přepište ji v potomcích tak, aby vypisovala i specifické vlastnosti (záruku resp. velikost). Využijte `super().info()` pokud to dává smysl.
