@@ -21,14 +21,14 @@ int tezky_vypocet(int id, int cas_s) {
 }
 
 // Funkce pro ukázku std::promise
-void producent_dat(std::promise<std::string> příslib) {
+void producent_dat(std::promise<std::string> prislib) {
     std::cout << "[Producent] Připravuji důležitá data..." << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
     
     std::string data = "Tajná zpráva z jiného vlákna";
     std::cout << "[Producent] Data hotova, zapisuji do promise." << std::endl;
     
-    příslib.set_value(data); // Předání do future
+    prislib.set_value(data); // Předání do future
 }
 
 #include <coroutine>
