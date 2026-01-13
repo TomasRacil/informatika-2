@@ -1,4 +1,4 @@
-# Úkol: Multithreaded Chat Server (Hotspot Challenge)
+# Úkol: Multithreaded Chat Server
 
 Vítejte u praktického úkolu, který spojuje vaše znalosti **síťové komunikace (sockety)** a **paralelního programování (vlákna)**. 
 
