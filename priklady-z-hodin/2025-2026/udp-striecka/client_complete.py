@@ -1,0 +1,181 @@
+import pygame
+import socket
+import json
+import math
+import sys
+
+# Konfigurace
+HOST = input("Zadej IP serveru (enter pro localhost): ")
+if not HOST:
+    HOST = '127.0.0.1'
+PORT = 65432
+WIDTH, HEIGHT = 800, 600
+PLAYER_SIZE = 20
+BG_COLOR = (30, 30, 30)
+PLAYER_COLOR = (0, 255, 0)
+ENEMY_COLOR = (255, 0, 0)
+BULLET_COLOR = (255, 255, 0)
+FPS = 60
+
+# Inicializace Pygame
+pygame.init()
+
+# Získání přezdívky
+# Jednoduchý input v konzoli před spuštěním okna (pro zjednodušení)
+nickname = input("Zadej svůj nick: ")
+if not nickname:
+    nickname = "Student"
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(f"UDP Střílečka - {nickname}")
+clock = pygame.time.Clock()
+font = pygame.font.SysFont("Arial", 18)
+
+# Síťová komunikace
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+client_socket.setblocking(False)
+
+# Helper pro vykreslování
+def draw_player(surface, x, y, angle, color, label=None):
+    # Vykreslení trojúhelníku rotovaného podle úhlu
+    rad = math.radians(angle)
+    # Body trojúhelníku
+    tip_x = x + math.cos(rad) * PLAYER_SIZE
+    tip_y = y + math.sin(rad) * PLAYER_SIZE
+    
+    left_x = x + math.cos(rad + 2.5) * PLAYER_SIZE
+    left_y = y + math.sin(rad + 2.5) * PLAYER_SIZE
+    
+    right_x = x + math.cos(rad - 2.5) * PLAYER_SIZE
+    right_y = y + math.sin(rad - 2.5) * PLAYER_SIZE
+    
+    pygame.draw.polygon(surface, color, [(tip_x, tip_y), (left_x, left_y), (right_x, right_y)])
+    
+    if label:
+        text = font.render(label, True, (255, 255, 255))
+        surface.blit(text, (x - text.get_width() // 2, y - 35))
+
+def main():
+    if client_socket is None:
+        print("Chyba: Socket není inicializován (ÚKOL 1).")
+        return
+    running = True
+    last_packet_time = pygame.time.get_ticks()
+    server_state = {"players": [], "bullets": [], "leaderboard": []}
+    
+    try:
+        while running:
+            clock.tick(FPS)
+            
+            # 1. Zpracování vstupů (Event loop)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            keys = pygame.key.get_pressed()
+            
+            # Sběr inputů
+            inputs = {
+                "left": keys[pygame.K_LEFT] or keys[pygame.K_a],
+                "right": keys[pygame.K_RIGHT] or keys[pygame.K_d],
+                "up": keys[pygame.K_UP] or keys[pygame.K_w],
+                "down": keys[pygame.K_DOWN] or keys[pygame.K_s],
+                "shoot": keys[pygame.K_SPACE]
+            }
+
+            # 2. Odeslání dat na server
+            data = {
+                "keys": inputs,
+                "nickname": nickname
+            }
+            try:
+                client_socket.sendto(json.dumps(data).encode('utf-8'), (HOST, PORT))
+            except Exception as e:
+                print(f"Chyba odesílání: {e}")
+
+            # 3. Příjem dat ze serveru
+            try:
+                while True: # Přečíst vše ve frontě
+                    packet, _ = client_socket.recvfrom(4096)
+                    server_state = json.loads(packet.decode('utf-8'))
+                    last_packet_time = pygame.time.get_ticks()
+            except BlockingIOError:
+                pass
+            except json.JSONDecodeError:
+                pass
+            except Exception as e:
+                print(f"Chyba sítě: {e}")
+
+            # Detekce odpojení
+            if pygame.time.get_ticks() - last_packet_time > 3000:
+                 print("Spojení ztraceno...")
+                 pass
+
+            # 4. Vykreslování
+            screen.fill(BG_COLOR)
+
+            # Vykreslení hráčů ze serveru
+            found_me = False
+            my_dead_timer = 0
+            
+            for p in server_state.get("players", []):
+                is_dead = p.get("is_dead", False)
+                label = p.get("nickname", "Unknown")
+                is_me = (label == nickname)
+                
+                # Pokud je hráč mrtvý, nevykreslujeme ho
+                if is_dead:
+                    if is_me:
+                        my_dead_timer = p.get("respawn_in", 0)
+                        found_me = True
+                    continue
+                
+                color = PLAYER_COLOR if is_me else ENEMY_COLOR
+                draw_player(screen, p["x"], p["y"], p["angle"], color, label)
+                if is_me:
+                    found_me = True
+            
+            # UI: Respawn Timer
+            if my_dead_timer > 0:
+                txt = f"RESPAWN IN {my_dead_timer:.1f}s"
+                surf = font.render(txt, True, (255, 0, 0))
+                # Center screen
+                screen.blit(surf, (WIDTH//2 - surf.get_width()//2, HEIGHT//2 - surf.get_height()//2))
+            
+            if not found_me:
+                # Pokud mě server neposílá (jsem mrtvý nebo odpojený), můžu vypsat info
+                pass
+
+            # Vykreslení kulek
+            for b in server_state.get("bullets", []):
+                pygame.draw.circle(screen, BULLET_COLOR, (int(b["x"]), int(b["y"])), 3)
+
+            # Vykreslení Leaderboardu (vlevo nahoře)
+            y_off = 10
+            lb_title = font.render("--- SCOREBOARD ---", True, (255, 215, 0))
+            screen.blit(lb_title, (10, y_off))
+            y_off += 25
+            
+            for entry in server_state.get("leaderboard", []):
+                # entry: {nickname, kills, deaths, ratio}
+                text = f"{entry['nickname']}: {entry['kills']}K / {entry['deaths']}D"
+                surf = font.render(text, True, (200, 200, 200))
+                screen.blit(surf, (10, y_off))
+                y_off += 20
+
+            pygame.display.flip()
+            
+    finally:
+        # Odeslání informace o odpojení
+        print("Odpojuji se...")
+        disc_msg = {"cmd": "disconnect"}
+        try:
+            for _ in range(3): # Pošleme 3x pro jistotu (UDP)
+                client_socket.sendto(json.dumps(disc_msg).encode('utf-8'), (HOST, PORT))
+        except:
+            pass
+        pygame.quit()
+        sys.exit()
+
+if __name__ == "__main__":
+    main()
