@@ -38,3 +38,11 @@ def vytiskni_info(jakykoliv_tvar):
 ```
 
 Této funkci je jedno, jestli jí předáte kruh nebo čtverec. Ví, že je to `Tvar`, a proto to má metodu `spocti_obsah()`. To je polymorfismus v praxi.
+---
+## **Cvičení**
+
+### **1. Zvířecí farma**
+1. Vytvořte abstraktní třídu `Zvire` s abstraktní metodou `vydej_zvuk`.
+2. Vytvořte třídy `Pes` a `Kocka`. Implementujte `vydej_zvuk` ("Haf", "Mnau").
+3. Vytvořte funkci `prehraj_zvuk(zvire)`, která přijme jakékoliv zvíře a zavolá jeho metodu.
+4. Ověřte, že nelze vytvořit instanci třídy `Zvire`.

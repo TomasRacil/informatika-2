@@ -287,3 +287,16 @@ Procesory nečtou paměť po bajtech, ale po blocích (tzv. **Cache Line**, obvy
 Pokud dvě vlákna často zapisují do dvou *různých* proměnných, které ale leží v paměti *těsně vedle sebe* (na stejné Cache Line), jádra procesoru se budou neustále "přetahovat" o vlastnictví tohoto bloku cache. To drasticky zpomaluje program, i když logicky nedochází k Race Condition.
 
 **Řešení:** Použití `alignas(64)` pro zarovnání proměnných v paměti tak, aby každá ležela na vlastní Cache Line.
+---
+## **Cvičení**
+
+### **1. Hello from thread**
+Vytvořte program, který spustí 5 vláken. Každé vlákno vypíše "Ahoj z vlakna [ID]".
+Pozorujte, zda jsou výpisy proházené.
+
+### **2. Race condition**
+Vytvořte globální proměnnou `counter = 0`. Spusťte dvě vlákna, každé 100 000x inkrementuje `counter`.
+Vypište výsledek. Je 200 000? Pokud ne, proč?
+
+### **3. Oprava mutexem**
+Opravte předchozí příklad použitím `std::mutex`.

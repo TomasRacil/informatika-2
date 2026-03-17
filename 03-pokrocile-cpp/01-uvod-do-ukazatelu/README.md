@@ -172,3 +172,19 @@ int* pInt = static_cast<int*>(pVoid);
 std::cout << *pInt; // Vypíše 5
 ```
 
+
+---
+## **Cvičení**
+
+### **1. Základy**
+1. Vytvořte proměnnou `int cislo = 10;`.
+2. Vytvořte ukazatel `int* pCislo` a nasměrujte ho na proměnnou `cislo`.
+3. Vypište adresu proměnné `cislo` a hodnotu, kterou obsahuje, pomocí ukazatele.
+
+### **2. Změna hodnoty**
+Pomocí ukazatele `pCislo` změňte hodnotu v proměnné `cislo` na 20. Ověřte výpisem původní proměnné.
+
+### **3. Aritmetika**
+Vytvořte pole `int cisla[] = {10, 20, 30};`.
+- Vytvořte ukazatel na začátek pole.
+- Pomocí posouvání ukazatele (aritmetiky) vypište všechny tři hodnoty.

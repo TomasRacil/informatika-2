@@ -74,3 +74,19 @@ Pokud chcete s načtenou hodnotou počítat, musíte ji ihned převést:
 ```python
 vek = int(input("Kolik ti je let? "))
 ```
+---
+## **Cvičení**
+
+### **1. Cestování v čase**
+Zeptejte se uživatele ("Kolik ti je let?").
+Načtenou hodnotu převeďte na číslo, přičtěte k ní 10 a vypište: "Za 10 let ti bude [vysledek]."
+
+### **2. BMI Kalkulačka**
+Načtěte od uživatele:
+- Váhu v kg (jako float).
+- Výšku v metrech (jako float).
+Vypočítejte BMI podle vzorce: `BMI = vaha / (vyska * vyska)`.
+Vypište výsledek.
+
+### **3. Typová kontrola**
+Vytvořte proměnné `x = 100` a `y = "100"`. Vypište jejich datové typy pomocí funkce `type()`.

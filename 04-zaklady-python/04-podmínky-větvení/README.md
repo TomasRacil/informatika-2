@@ -87,3 +87,19 @@ match status_kod:
     case _:  
         print("Neznamy stav") # _ funguje jako default (else)  
 ```
+---
+## **Cvičení**
+
+### **1. Heslo**
+Načtěte od uživatele heslo.
+- Pokud je heslo "tajne123", vypište "Přístup povolen".
+- Jinak vypište "Chybné heslo".
+
+### **2. Porovnání čísel**
+Načtěte číslo.
+- Pokud je větší než 0: vypište "Kladné".
+- Pokud je menší než 0: vypište "Záporné".
+- Jinak vypište "Nula".
+
+### **3. Dny v týdnu (Match-case)**
+Načtěte číslo dne (1-7). Pomocí `match-case` vypište název dne (Pondělí, Úterý...). Pro jiná čísla vypište "Neplatný den".

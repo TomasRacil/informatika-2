@@ -121,3 +121,21 @@ struct Uzel {
     Uzel* dalsi;    // Ukazatel na další uzel ve struktuře
 };
 ```
+
+---
+## **Cvičení**
+
+### **1. Knihovna**
+Definujte strukturu `Kniha`, která bude mít:
+- Název (string)
+- Autora (string)
+- Rok vydání (int)
+- Cenu (double)
+
+### **2. Evidence knih**
+Vytvořte pole typu `Kniha` pro 3 knihy. Naplňte ho daty (natvrdo v kódu nebo od uživatele).
+
+### **3. Výpis a hledání**
+1. Napište funkci `vypisKnihu(const Kniha& k)`, která vypíše informace o jedné knize.
+2. Pomocí cyklu vypište všechny knihy v poli.
+3. Najděte a vypište nejdražší knihu v poli.

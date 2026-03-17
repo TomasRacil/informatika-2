@@ -62,3 +62,17 @@ Jako typ lze použít i název vlastní třídy.
 def zpracuj_studenta(student: Student) -> None:  
     ...  
 ```
+---
+## **Cvičení**
+
+### **1. Typovaná funkce**
+Napište funkci `vypocet_obvodu`, která:
+- Přijímá jeden parametr `strana` (typu `int` nebo `float`).
+- Vrací `float`.
+- Vypočítá obvod čtverce (strana * 4).
+
+### **2. Kolekce**
+Vytvořte proměnnou `studenti`, která bude slovníkem, kde klíčem je jméno (`str`) a hodnotou věk (`int`). Použijte správnou typovou anotaci.
+
+### **3. Optional**
+Napište funkci `najdi_uzivatele(id: int)`, která vrátí jméno uživatele (`str`) nebo `None`, pokud uživatel neexistuje (vracejte `None` pro jakékoliv ID > 10). Nezapomeňte na návratový typ `str | None` (nebo `Optional[str]`).

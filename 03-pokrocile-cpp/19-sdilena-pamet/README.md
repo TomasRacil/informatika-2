@@ -69,3 +69,17 @@ Funguje jako zámek, který leží v systému (mimo paměť našich procesů).
 1. [01-zaklady](./01-zaklady): Jednoduchý přenos textu (Writer/Reader).  
 2. [02-race-condition](./02-race-condition): Ukázka chyby při souběžném zápisu.  
 3. [03-synchronizace](./03-synchronizace): Oprava chyby pomocí pojmenovaného semaforu.
+---
+## **Cvičení**
+
+### **1. Časovač (Writer & Reader)**
+Napište dva programy:
+1. **writer.cpp**: Vytvoří sdílenou paměť (o velikosti `sizeof(long)`). V nekonečném cyklu do ní každou sekundu zapisuje aktuální čas (Unix timestamp).
+2. **reader.cpp**: Připojí se ke stejné sdílené paměti a v cyklu vypisuje hodnotu, kterou tam writer zapsal.
+Ověřte, že se hodnota v readeru mění, i když writer běží v jiném terminálu.
+
+### **2. Implementace semaforu**
+Upravte oba programy tak, aby používaly **pojmenovaný semafor** (`sem_open`).
+- Writer: Zamkne semafor -> zapíše -> odemkne.
+- Reader: Zamkne semafor -> přečte -> odemkne.
+Tím zajistíte, že reader nebude čist nekompletní data (i když u jednoho `long` to není tak kritické, jde o princip).

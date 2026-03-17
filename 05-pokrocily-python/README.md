@@ -61,4 +61,6 @@ Jupyter Notebooky umožňují spouštět kód po částech (buňkách) a vidět 
 16. [Vlákna (Threading)](./16-vlakna/)
 17. [Multiprocessing (Více procesů)](./17-multiprocessing/)
 18. [Sdílení paměti](./18-sdilena-pamet/)
-19. [Sockety a Síťová komunikace](./19-sitova-komunikace/)
+19. [Klasické sockety (Blocking I/O)](./19-klasicke-sockety/)
+20. [Úvod do AsyncIO](./20-uvod-asyncio/)
+21. [Síťová komunikace v AsyncIO](./21-sitova-komunikace-asyncio/)

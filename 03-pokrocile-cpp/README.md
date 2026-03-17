@@ -27,4 +27,9 @@ Nakonec se podíváme na moderní prvky C++, jako jsou šablony, výjimky a stan
 | 13 | [Úvod do STL](./13-uvod-do-stl/) | Základní kontejnery (`vector`, `list`, `map`), iterátory a algoritmy. |
 | 14 | [Smart pointers](./14-smart-pointers/) | Moderní a bezpečná alternativa k ukazatelům. |
 | 15 | [Lambda a algoritmy](./15-lambda-a-algoritmy/) | Představení konceptu lambda funkce a jejího využití. |
-| 16 | [Regulární výrazy](./16-regularni-vyrazy/) | Úvod do regulárních výrazů v cpp | 
+| 16 | [Regulární výrazy](./16-regularni-vyrazy/) | Úvod do regulárních výrazů v C++. | 
+| 17 | [Argumenty příkazové řádky](./17-argumenty-prikazove-radky/) | Předávání parametrů programu při spuštění. |
+| 18 | [Vlákna a paralelizmus](./18-vlakna-a-paralenni-programovani/) | Práce s vlákny, mutexy a atomickými operacemi. |
+| 19 | [Sdílená paměť](./19-sdilena-pamet/) | Komunikace mezi procesy pomocí sdílené paměti. |
+| 20 | [Síťová komunikace](./20-sitova-komunikace/) | Berkeley Sockets, TCP a UDP. |
+| 21 | [Asynchronní programování](./21-asynchronni-programovani/) | Úlohy (`std::async`, `std::future`) a C++20 korutiny. |

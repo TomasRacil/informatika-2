@@ -45,3 +45,14 @@ Psaní čistého C API je pracné. Existují modernější nástroje:
 * **Cython:** Píšete kód podobný Pythonu, který se přeloží do C.  
 * **pybind11:** Moderní C++ knihovna pro velmi snadné propojení C++ a Pythonu.  
 * **ctypes / cffi:** Umožňuje volat existující C knihovny bez nutnosti kompilace wrapperu.
+---
+## **Cvičení**
+
+### **1. Cílová rovinka (C kód)**
+Vytvořte soubor `mymath.c`. Napište v něm funkci v jazyce C, která přijme dvě celá čísla a vrátí jejich součin.
+Přidejte nezbytný "boilerplate" kód (pomocí `Python.h`), abyste tuto funkci vystavili jako modul `mymath`.
+
+### **2. Kompilace a Test**
+Vytvořte soubor `setup.py` pro kompilaci vašeho modulu `mymath`.
+1. Spusťte build (`python setup.py build_ext --inplace`).
+2. Vytvořte skript `test.py`, který importuje `mymath`, zavolá vaši funkci a vypíše výsledek.

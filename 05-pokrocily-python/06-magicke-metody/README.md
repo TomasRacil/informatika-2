@@ -44,3 +44,14 @@ Pokud definujeme `__add__`, můžeme napsat `v3 = v1 + v2`. Python interně zavo
 * **`__call__(self)`**: Umožňuje zavolat objekt jako funkci `objekt()`.
 
 Používání magických metod činí kód tzv. **Pythonic** – čistý, čitelný a intuitivní.
+---
+## **Cvičení**
+
+### **1. Vektory**
+Vytvořte třídu `Vektor`, která má atributy `x` a `y`.
+1. Implementujte `__str__`, aby se vektor vypisoval jako `(x, y)`.
+2. Implementujte `__add__`, aby bylo možné sečíst dva vektory (`v3 = v1 + v2`).
+3. Vytvořte dva vektory, sečtěte je a výsledek vypište.
+
+### **2. Porovnání**
+Přidejte metodu `__eq__`, která vrátí `True`, pokud mají dva vektory stejné `x` i `y`. Otestujte to.

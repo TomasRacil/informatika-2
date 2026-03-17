@@ -47,3 +47,14 @@ V našem diamantu:
 4. `A` zavolá `super().__init__()` -> Konec řetězce (object).
 
 Díky tomu se každá metoda zavolá **právě jednou**. Tomu se říká **kooperativní vícenásobná dědičnost**. Aby to fungovalo, musí **všechny** třídy v hierarchii používat `super()`, i když dědí jen z `object`.
+---
+## **Cvičení**
+
+### **1. MRO Průzkumník**
+Vytvořte "diamantovou" strukturu tříd:
+- `A` s metodou `pozdrav()` ("Ahoj z A").
+- `B(A)` přepíše `pozdrav` ("Ahoj z B") a zavolá `super`.
+- `C(A)` přepíše `pozdrav` ("Ahoj z C") a zavolá `super`.
+- `D(B, C)` přepíše `pozdrav` ("Ahoj z D") a zavolá `super`.
+
+Vytvořte instanci `D` a zavolejte `pozdrav()`. Sledujte pořadí výpisů.

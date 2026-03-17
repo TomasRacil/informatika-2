@@ -69,3 +69,23 @@ Pokud chceme zajistit, aby se hodnota proměnné po její inicializaci již nikd
 const double PI = 3.14159;  
 // PI = 3.14; // Tento řádek by způsobil chybu při kompilaci  
 ```
+---
+## **Cvičení**
+
+### **1. Práce s proměnnými**
+Vytvořte program, který:
+1. Deklaruje proměnné pro uložení:
+   - Vašeho věku (celé číslo).
+   - Vaší výšky v metrech (desetinné číslo).
+   - Prvního písmene vašeho jména (znak).
+   - Zda jste student (logická hodnota).
+2. Vypíše tyto hodnoty na obrazovku.
+3. Zkuste deklarovat konstantu pro číslo PI a pokuste se ji změnit - sledujte chybovou hlášku kompilátoru.
+
+**Očekávaný výstup:**
+```text
+Věk: 20
+Výška: 1.85
+Iniciála: J
+Student: 1  (nebo true)
+```

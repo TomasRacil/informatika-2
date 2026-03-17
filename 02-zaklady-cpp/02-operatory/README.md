@@ -64,3 +64,14 @@ Pokud si nejsme jisti prioritou nebo chceme pořadí změnit, **používáme kul
 int vysledek1 = 5 + 10 * 2; // vysledek1 bude 25  
 int vysledek2 = (5 + 10) * 2; // vysledek2 bude 30  
 ```
+---
+## **Cvičení**
+
+### **1. Jednoduchá kalkulačka**
+Napište program, který:
+1. Načte od uživatele dvě celá čísla.
+2. Vypíše výsledky součtu, rozdílu, součinu, podílu (celočíselného) a zbytku po dělení.
+
+### **2. Logické operátory**
+Vytvořte program, který ověří, zda zadané číslo patří do intervalu `<10, 20>`.
+- Použijte operátor `&&` pro spojení podmínek (větší nebo rovno 10 A ZÁROVEŇ menší nebo rovno 20).

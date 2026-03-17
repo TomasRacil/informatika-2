@@ -66,3 +66,16 @@ pip install -r requirements.txt
 ```
 
 Tím se nainstalují přesně ty verze knihoven, které projekt potřebuje.
+---
+## **Cvičení**
+
+### **1. Manifest (Teorie)**
+Vytvořte textový soubor `requirements.txt`, který byste použili pro projekt, jenž vyžaduje:
+- Knihovnu `requests` přesně ve verzi `2.28.1`.
+- Knihovnu `flask` v jakékoliv verzi.
+
+### **2. Příkazy (Teorie)**
+Napište sérii příkazů pro Linux, které:
+1. Vytvoří virtuální prostředí.
+2. Aktivují ho.
+3. Nainstalují balíček `numpy`.

@@ -185,3 +185,23 @@ int main() {
   * **Disciplína:** Vždy párovat `new` s `delete` / `new[]` s `delete[]`.
   * **RAII (Resource Acquisition Is Initialization):** Moderní C++ technika, kde se o správu zdroje (např. paměti) stará objekt (třída). Zdroj se alokuje v konstruktoru a automaticky uvolňuje v destruktoru. Toto je princip **chytrých ukazatelů** (`std::unique_ptr`, `std::shared_ptr`), které jsou preferovaným způsobem správy dynamické paměti v moderním C++. *(Zmíníme se o nich později)*.
 
+
+---
+## **Cvičení**
+
+### **1. Jednoduchá alokace**
+Vytvořte program, který:
+1. Alokuje na haldě jedno celé číslo.
+2. Uloží do něj hodnotu.
+3. Vypíše ji.
+4. Uvolní paměť.
+
+### **2. Dynamické pole**
+1. Zeptejte se uživatele, jak velké pole chce vytvořit.
+2. Alokujte pole intů dané velikosti.
+3. Naplňte ho čísly (např. od 0 do N).
+4. Vypište ho.
+5. Správně uvolněte paměť ().
+
+### **3. 2D Matice (Bonus)**
+Zkuste alokovat dynamickou matici 3x3 (pomocí pole ukazatelů), naplnit ji a uvolnit.

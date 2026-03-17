@@ -36,3 +36,17 @@ shm.unlink() # Smaže paměť z OS (volá pouze ten, kdo ji vytvořil!)
 V Pythonu jsme zvyklí, že Garbage Collector uklízí za nás. U sdílené paměti to neplatí!  
 Pokud proces spadne dříve, než zavolá `unlink()`, sdílená paměť v operačním systému zůstane "viset" a zabírá místo, dokud nerestartujete počítač (nebo ji nesmažete ručně).  
 **Tip:** Vždy používejte `try...finally` bloky pro zajištění úklidu.
+---
+## **Cvičení**
+
+### **1. Zapisovatel (Writer)**
+Napište skript, který:
+1. Vytvoří sdílenou paměť o velikosti 5 bajtů se jménem "TestShared".
+2. Na první pozici (`buf[0]`) zapíše číslo 100.
+3. Čeká na stisk Enteru (aby se program hned neukončil) a nakonec zavolá `unlink()`.
+
+### **2. Čtenář (Reader)**
+Napište druhý skript (spusťte v jiném terminálu), který:
+1. Připojí se k "TestShared".
+2. Přečte hodnotu z první pozice.
+3. Vypíše ji.

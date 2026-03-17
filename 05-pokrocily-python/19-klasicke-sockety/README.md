@@ -41,6 +41,39 @@ soubor = conn.makefile('rw')
 # Nyní můžeme používat print() a readline()!  
 soubor.write("Ahoj kliente!n")  
 soubor.flush() # Vynutit odeslání
-
-odpoved = soubor.readline() # Přečte řádek ukončený n  
 ```
+
+### **D. Shrnutí**
+
+| Vlastnost | TCP (`SOCK_STREAM`) | UDP (`SOCK_DGRAM`) |
+|-----------|--------------------|--------------------|
+| **Spojení** | Vyžaduje (handshake) | Nespojované |
+| **Spolehlivost** | Garantovaná | Bez záruky |
+| **Pořadí** | Zachováno | Může se měnit |
+| **Rychlost** | Nižší (overhead) | Maximální |
+
+## **Řešení potíží**
+
+**1. `OSError: [Errno 98] Address already in use`**
+- Server se snaží obsadit port, který ještě nebyl operačním systémem uvolněn (často po násilném ukončení).
+- **Řešení:** V kódu použijte `s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)` před `s.bind()`.
+
+**2. Klient se nemůže připojit**
+- Přesvědčte se, že server běží na stejném `HOST` a `PORT`.
+- Pokud zkoušíte komunikaci mezi dvěma počítači, místo `127.0.0.1` použijte reálnou IP adresu (např. `192.168.x.x`) nebo `'0.0.0.0'` pro naslouchání na všech rozhraních.
+- Zkontrolujte firewall.
+---
+## **Cvičení**
+
+### **1. Jednoduchý server**
+Vytvořte serverový skript, který:
+- Naslouchá na portu 65432.
+- Přijme spojení.
+- Pošle klientovi zprávu "Vítej na serveru".
+- Spojení uzavře.
+
+### **2. Jednoduchý klient**
+Vytvořte klientský skript, který:
+- Se připojí na 127.0.0.1:65432.
+- Přijme zprávu (pomocí `recv(1024)`).
+- Vypíše ji a skončí.

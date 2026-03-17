@@ -83,3 +83,17 @@ for radek in range(3):
         print(f"[{radek},{sloupec}]", end=" ")  
     print() # Odradkovani 
 ```
+---
+## **Cvičení**
+
+### **1. Počitadlo**
+Pomocí cyklu `for` vypište čísla od 1 do 10 (včetně).
+
+### **2. Hláskování**
+Načtěte od uživatele slovo. Pomocí cyklu `for` vypište každé písmeno na samostatný řádek.
+
+### **3. Neodbytný program**
+Pomocí cyklu `while` se ptejte uživatele "Chceš pokračovat?". Cyklus ukončete, až když uživatel napíše "ne".
+
+### **4. Sudá čísla**
+Vypište všechna sudá čísla mezi 0 a 20. Zkuste to vyřešit pomocí parametru `step` ve funkci `range`.

@@ -89,3 +89,20 @@ Proces kompilace se skládá ze dvou hlavních fází:
    * Vidí, že `main.o` potřebuje funkci secti.  
    * Najde funkci secti v `Matematika.o`.  
    * Propojí je dohromady a vytvoří finální spustitelný soubor (např. `program.exe`).
+---
+## **Cvičení**
+
+### **1. Rozdělení programu**
+Máte jednoduchý program v jednom souboru:
+```cpp
+int secti(int a, int b) { return a + b; }
+int main() { cout << secti(1, 2); }
+```
+Rozdělte ho na tři soubory:
+- `matematika.h` (hlavička funkce)
+- `matematika.cpp` (tělo funkce)
+- `main.cpp` (volání funkce)
+
+### **2. Kompilace**
+Zkuste program zkompilovat. Pokud používáte příkazovou řádku, nezapomeňte uvést oba .cpp soubory:
+`g++ main.cpp matematika.cpp -o program`

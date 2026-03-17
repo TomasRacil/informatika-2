@@ -67,3 +67,14 @@ V transportní vrstvě se rozhodujeme mezi dvěma přístupy.
 
 * **Server:** `socket()` -> `bind()` -> `recvfrom()` -> `sendto()`.  
 * **Klient:** `socket()` -> `sendto()` -> `recvfrom()`.
+---
+## **Cvičení**
+
+### **1. Jednoduchý Chat**
+Napište dvě aplikace:
+1. **Server**: Vytvoří socket, nabinduje ho na port 8080 a přepne do naslouchání (`listen`). V nekonečném cyklu přijímá spojení (`accept`). Jakmile se klient připojí, přečte data (`recv`) a vypíše je na obrazovku.
+2. **Klient**: Připojí se k serveru na localhost:8080. Čte vstup od uživatele (`std::cin`) a posílá ho na server (`send`).
+
+### **2. Vylepšení (Echo)**
+Upravte server tak, aby přijaté zprávy poslal **zpátky** klientovi (Echo).
+Upravte klienta tak, aby po odeslání zprávy čekal na odpověď a vypsal ji ("Server odpověděl: ...").

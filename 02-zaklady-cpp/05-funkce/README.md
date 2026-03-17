@@ -82,3 +82,17 @@ V C++ můžeme mít více funkcí se stejným názvem, pokud se liší v počtu 
 int secti(int a, int b);       // Sčítá dvě celá čísla  
 double secti(double a, double b); // Sčítá dvě desetinná čísla  
 ```
+---
+## **Cvičení**
+
+### **1. Najdi maximum**
+Napište funkci `int maximum(int a, int b)`, která vrátí větší z obou čísel. V `main` funkci ji vyzkoušejte na datech od uživatele.
+
+### **2. Opakovaný pozdrav**
+Napište funkci `void pozdrav(int n)`, která `n`-krát vypíše "Ahoj!".
+
+### **3. Přetěžování**
+Vytvořte dvě funkce se jménem `vypis`:
+1. Jedna přijímá `int` parametry a vypíše: "Cislo: [hodnota]".
+2. Druhá přijímá `std::string` a vypíše: "Text: [hodnota]".
+Ověřte, že kompilátor vybere správnou funkci podle typu argumentu.

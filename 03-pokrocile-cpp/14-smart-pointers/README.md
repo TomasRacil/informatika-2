@@ -129,3 +129,16 @@ public:
     ~Osoba() { std::cout << "Destruktor Osoby" << std::endl; }  
 };
 ```
+---
+## **Cvičení**
+
+### **1. Unique Pointer**
+1. Vytvořte třídu `Test` s destruktorem, který vypíše "Znicen!".
+2. V `main` vytvořte `std::unique_ptr<Test>`.
+3. Ověřte, že se zpráva vypíše sama na konci programu.
+
+### **2. Shared Pointer**
+1. Vytvořte `std::shared_ptr<int>` s hodnotou 100.
+2. Vvořte druhý `shared_ptr`, který bude kopií prvního.
+3. Vypište počet referencí (`use_count()`).
+4. Resetujte první ukazatel (`reset()`) a znovu vypište počet referencí u druhého.

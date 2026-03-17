@@ -64,3 +64,16 @@ Nejběžnější operace se spojovým seznamem (pro jednoduchý jednosměrný se
   * **Výpis seznamu:** Procházej seznam od `head` pomocí dočasného ukazatele, dokud nenarazíš na `nullptr`, a vypisuj data každého uzlu.
   * **Smazání prvku:** (Složitější) Najdi uzel *před* mazaným uzlem, přesměruj jeho `dalsi` ukazatel na uzel *za* mazaným uzlem a pak uvolni paměť mazaného uzlu (`delete`). Speciální případ je mazání prvního uzlu (`head`).
   * **Zrušení seznamu:** Projdi celý seznam a postupně uvolni paměť (`delete`) pro každý uzel.
+
+---
+## **Cvičení**
+
+### **1. Manuální spojování**
+Použijte strukturu `Uzel` z textu.
+1. V `main` dynamicky vytvořte 3 uzly (s daty 1, 2, 3).
+2. Manuálně je propojte (ukazatel prvního na druhý, druhého na třetí).
+3. Vypište data procházením přes ukazatele ( `head->data`, `head->dalsi->data` ...).
+4. Všechny uzly uvolněte (`delete`).
+
+### **2. Výpis cyklem**
+Zkuste napsat cyklus `while`, který projde vámi vytvořený seznam a vypíše všechny hodnoty, dokud nenarazí na `nullptr`.

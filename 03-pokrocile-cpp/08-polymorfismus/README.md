@@ -108,3 +108,14 @@ int main() {
 Ukázku všech těchto konceptů v praxi najdete v souboru `main.cpp`.
 
 >Poznámka ke správě paměti: V příkladu používáme new pro vytvoření objektů na haldě a následně delete pro jejich uvolnění. Při práci s polymorfismem a ukazateli na základní třídu je nutné mít virtuální destruktor, aby se zajistilo správné uvolnění zdrojů dceřiné třídy. V moderním C++ se pro zjednodušení správy paměti často používají chytré ukazatele (např. std::unique_ptr, std::shared_ptr), které uvolnění paměti řeší automaticky. Těmi se budeme zabývat později.
+---
+## **Cvičení**
+
+### **1. Geometrické útvary**
+1. Vytvořte abstraktní třídu `Utvar` s čistě virtuální metodou `double obsah()`.
+2. Vytvořte třídy `Ctverec` (strana a) a `Kruh` (poloměr r), které dědí z `Utvar`. Implememtujte výpočet obsahu.
+3. V `main` vytvořte pole ukazatelů na `Utvar` a vložte do něj instance čtverce i kruhu.
+4. Cyklem projděte pole a u každého prvku vypište jeho obsah.
+
+### **2. Virtuální destruktor**
+Do třídy `Utvar` přidejte virtuální destruktor, který vypíše hlášku. Ověřte, že při smazání objektů přes ukazatel na předka se zavolá i správný destruktor potomka.

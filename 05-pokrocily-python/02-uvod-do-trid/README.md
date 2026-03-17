@@ -83,3 +83,13 @@ Metoda `__init__` je tzv. magická metoda (dunder method).
 * **Objekt** je konkrétní instance třídy.  
 * **`__init__`** nastavuje startovní data.  
 * **`self`** umožňuje objektu přistupovat ke svým vlastním datům.
+---
+## **Cvičení**
+
+### **1. Kniha**
+Vytvořte třídu `Kniha`.
+1. V konstruktoru (`__init__`) nastavte atributy `nazev`, `autor` a `pocet_stran`.
+2. Přidejte metodu `info(self)`, která vypíše: "Kniha [nazev] od [autor] má [pocet] stran."
+
+### **2. Knihovna**
+Vytvořte dvě instance třídy `Kniha` (např. Harry Potter a Pán Prstenů). Zavolejte na obou metodu `info()`.

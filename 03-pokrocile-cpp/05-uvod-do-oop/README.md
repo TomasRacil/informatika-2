@@ -76,3 +76,16 @@ Ve výchozím stavu jsou všichni členové třídy (`class`) **privátní**.
 ### Příklad
 
 Praktickou ukázku definice třídy `Obdelnik`, vytvoření jejích instancí a volání metod najdete v souboru `main.cpp`.
+
+---
+## **Cvičení**
+
+### **1. Třída Auto**
+Vytvořte třídu `Auto`, která bude mít:
+- Privátní atributy: `znacka` (string), `rokVyroby` (int).
+- Public metody:
+    - `nastavHodnoty(string z, int r)`
+    - `vypisInfo()` - vypíše např. "Skoda, rok 2010"
+
+### **2. Použití**
+V `main` vytvořte instanci třídy `Auto`, nastavte ji hodnoty a zavolejte výpis. Zkuste přistoupit k atributu `znacka` přímo (`objekt.znacka`) a ověřte, že to díky `private` nejde.

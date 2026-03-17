@@ -70,3 +70,16 @@ Vždy specifikujte, jakou chybu čekáte (např. `except ValueError`). Pokud chc
 ### **2. Pass v except bloku**
 
 Pokud chybu chytíte a nic neuděláte (`pass`), chyba "zmizí". Program pokračuje v nekonzistentním stavu a vy nevíte proč. Vždy chybu alespoň zalogujte.
+
+---
+## **Cvičení**
+
+### **1. Kalkulačka s ochranou**
+Napište program, který:
+1. Načte dvě čísla od uživatele.
+2. Vydělí je.
+3. Ošetří `ValueError` (pokud zadá text) a `ZeroDivisionError` (pokud dělí nulou).
+4. Vypíše výsledek nebo chybovou hlášku.
+
+### **2. Validátor**
+Napište funkci `registrace(jmeno)`, která vyvolá `ValueError`, pokud je jméno prázdné nebo kratší než 3 znaky. Funkci zavolejte v bloku `try-catch` a odchyťte chybu.

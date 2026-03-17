@@ -96,3 +96,17 @@ public:
 ```
 
 Praktickou ukázku celého životního cyklu objektu (volání konstruktoru a destruktoru) nejdete v souboru `main.cpp`.
+
+---
+## **Cvičení**
+
+### **1. Produkt v e-shopu**
+Vytvořte třídu `Produkt`.
+1. **Konstruktor**: Přijme název a cenu, uloží je do atributů a vypíše "Vytvořen produkt: [nazev]".
+2. **Destruktor**: Vypíše "Zničen produkt: [nazev]".
+3. V `main` vytvořte produkt uvnitř bloku `{ ... }`. Sledujte, kdy se vypíše zpráva z destruktoru (mělo by to být při ukončení bloku).
+
+### **2. Dynamický objekt**
+Zkuste vytvořit produkt dynamicky pomocí `new`.
+- Kdy se zavolá konstruktor?
+- Kdy se zavolá destruktor? (Nápověda: Musíte zavolat `delete`).

@@ -57,3 +57,20 @@ Knihovna STL (v hlavičce `<algorithm>`) poskytuje obrovské množství funkcí 
   * A mnoho dalších (`copy`, `remove`, `transform`, `max_element`, ...).
 
 Používání algoritmů STL je téměř vždy efektivnější a bezpečnější než psaní vlastních cyklů pro tyto operace.
+
+---
+## **Cvičení**
+
+### **1. Práce s vektorem**
+1. Vytvořte `std::vector<int>`, vložte do něj 10 náhodných čísel.
+2. Seřaďte ho pomocí `std::sort`.
+3. Vypište ho pomocí range-based for cyklu.
+
+### **2. Slovník**
+Vytvořte `std::map<string, int>` reprezentující nákupní seznam (název věci -> počet kusů).
+1. Přidejte pár položek (např. "Rohliky" -> 10, "Mleko" -> 2).
+2. Zkuste vyhledat, zda seznam obsahuje "Chleba".
+3. Vypište celý seznam.
+
+### **3. Unikátní čísla**
+Máte pole s duplicitami: `{1, 2, 2, 3, 1, 4}`. Vložte je do `std::set<int>` a vypište výsledek. (Měl by obsahovat jen unikátní čísla).

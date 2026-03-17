@@ -56,3 +56,12 @@ try:
 except ZeroDivisionError:  
     logging.error("Chyba výpočtu", exc_info=True)
 ```
+---
+## **Cvičení**
+
+### **1. První log**
+Nastavte `logging.basicConfig` tak, aby logoval do souboru `moje_aplikace.log` a úroveň byla `DEBUG`. Zalogujte jednu zprávu z každé úrovně (debug, info, warning, error).
+Otevřete soubor a zkontrolujte obsah.
+
+### **2. Logování chyby**
+Vytvořte záměrnou chybu (např. dělení nulou) v bloku `try-except`. V bloku `except` chybu zalogujte pomocí `logging.error("...", exc_info=True)`, aby se uložil i popis chyby.
