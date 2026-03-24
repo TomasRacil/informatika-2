@@ -73,7 +73,7 @@ catch (const std::runtime_error& e) {
 
 `std::cerr` je standardní chybový výstup, podobný `std::cout`, ale určený pro chybové hlášky.
 
-### ** Vícenásobné a obecné `catch` bloky**
+### **Vícenásobné a obecné `catch` bloky**
 
 Můžeme definovat více `catch` bloků pro jeden `try` blok, abychom mohli zpracovat různé typy výjimek odlišně. Jako poslední záchranu můžeme použít `catch (...)`, který zachytí jakoukoliv výjimku, která nebyla zachycena předchozími `catch` bloky.
 
