@@ -19,7 +19,14 @@ int main(){
     }
 
     for(int i = 0; i<cisla.size();i++){
-        std::cout<< cisla[i]<<std::endl;
+        int prvni_cislo = cisla[i];
+        for(int j = i+1; j<cisla.size(); j++){
+            int druhe_cislo = cisla[j];
+            if(prvni_cislo+druhe_cislo==2020){
+                std::cout<<prvni_cislo*druhe_cislo<<std::endl;
+                return 0;
+            }
+        }
     }
 
     return 0;
