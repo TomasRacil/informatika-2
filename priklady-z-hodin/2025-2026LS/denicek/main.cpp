@@ -5,6 +5,8 @@
 bool zapisZaznamuDoSouboru(std::string filepath){
     std::string zaznam;
     std::cout<<"Zadej zaznam do denicku (nebo KONEC pro ukonceni): ";
+    std::cin.clear();
+    std::cin.ignore();
     std::getline(std::cin, zaznam);
     if(zaznam == "KONEC"){
         return false;
@@ -33,15 +35,28 @@ void prectiSoubor(std::string filename){
 
 int main(){
     std::string filepath ="denicek.txt";
+    bool run=true;
 
-    prectiSoubor(filepath);
-    // while (true)
-    // {
-    //     if(!zapisZaznamuDoSouboru(filepath)){
-    //         break;
-    //     }
-    // }
-    
+    while(run){
+        std::cout<<std::endl<<"Chces zapisovat(Z) do souboru, nebo cist(C) soubor, nebo ukonkoncit(X) program." <<std::endl;
+        char volba;
+        std::cin>>volba;
+        switch (volba)
+        {
+        case 'Z':
+            zapisZaznamuDoSouboru(filepath);
+            break;
+        case 'C':
+            prectiSoubor(filepath);
+            break;
+        case 'X':
+            run = false;
+            break;
+        default:
+            std::cout<<"Toto neni platna volba!";
+            break;
+        }
+    }
 
     return 0;
 }
