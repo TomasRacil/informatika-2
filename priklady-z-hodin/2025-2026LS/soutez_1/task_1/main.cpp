@@ -28,9 +28,9 @@ int solveTask1Part1(std::vector<int> data) {
     return 0;
   }
 
-  for (int i = 1; i < data.size(); i = i + 1) {
+  for (int i = 1; i < data.size(); i++) {
     if (data[i] > data[i - 1]) {
-      count = count + 1;
+      count++;
     }
   }
 
