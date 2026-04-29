@@ -29,7 +29,10 @@ void smaz_matici(Matice*& matice){
     matice->matice[i] = nullptr;
   }
   delete[] matice->matice;
-  matice = nullptr; 
+  matice = nullptr;
+
+  delete matice;
+  matice=nullptr;
 }
 
 void vypis_matici(const Matice &matice) {
