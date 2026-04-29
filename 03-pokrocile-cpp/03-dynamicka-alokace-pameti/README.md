@@ -1,4 +1,4 @@
-# 02 - Dynamická alokace paměti
+# 03 - Dynamická alokace paměti
 
 Dosud jsme pracovali s proměnnými a poli, jejichž velikost byla pevně daná v době kompilace. Kam se tyto proměnné ukládají a jak funguje správa paměti v typickém C++ programu? Existují dvě hlavní oblasti paměti, které náš program využívá: **Zásobník (Stack)** a **Halda (Heap)**.
 

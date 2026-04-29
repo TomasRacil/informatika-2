@@ -1,4 +1,4 @@
-# 03 - Ukazatele a funkce
+# 04 - Ukazatele a funkce
 
 Ukazatele hrají klíčovou roli při práci s funkcemi v C++. Umožňují nám efektivněji předávat data a dokonce měnit hodnoty proměnných mimo samotnou funkci. Zopakujme si nejprve standardní chování.
 

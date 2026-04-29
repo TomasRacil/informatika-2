@@ -1,4 +1,4 @@
-# 03 - Dynamické datové struktury: Spojový seznam
+# 05 - Dynamické datové struktury: Spojový seznam
 
 Zatímco pole (statické i dynamické) ukládá prvky v souvislém bloku paměti, **dynamické datové struktury** propojují jednotlivé prvky pomocí **ukazatelů**. To jim dává větší flexibilitu při vkládání a mazání prvků, i když za cenu pomalejšího přístupu k prvkům podle indexu.
 

@@ -45,7 +45,14 @@ void deleteList(Node *&head) {
 
   // Váš kód zde:
 
-  // head = nullptr; // Nakonec nastavíme head bezpečně na nic
+  
+  while(head != nullptr){
+    Node* next = head->next;
+    delete head;
+    head = next;
+  }
+  
+  head = nullptr;
 }
 
 int main() {
