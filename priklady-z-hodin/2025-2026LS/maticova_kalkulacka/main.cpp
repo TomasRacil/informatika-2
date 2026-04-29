@@ -2,8 +2,8 @@
 
 struct Matice {
   int** matice;
-  int radky = 3;
-  int sloupce = 3;
+  int radky;
+  int sloupce;
 };
 
 Matice* vytvor_matici(int radky, int sloupce){
