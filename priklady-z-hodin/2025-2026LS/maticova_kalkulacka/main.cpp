@@ -126,7 +126,7 @@ Matice *secti_matice(const Matice &matice_1, const Matice &matice_2) {
   if (matice_1.radky != matice_2.radky ||
       matice_1.sloupce != matice_2.sloupce) {
     std::cout << "Matice nejsou stejne velke." << std::endl;
-    return NULL;
+    return nullptr;
   }
   Matice *vysledek = vytvor_matici(matice_1.radky, matice_1.sloupce, 0);
   for (int i = 0; i < matice_1.radky; i++) {
@@ -140,7 +140,7 @@ Matice *secti_matice(const Matice &matice_1, const Matice &matice_2) {
 Matice *nasob_matice(const Matice &matice_1, const Matice &matice_2) {
   if (matice_1.sloupce != matice_2.radky) {
     std::cout << "Matice nejsou kompatibilni pro nasobeni." << std::endl;
-    return NULL;
+    return nullptr;
   }
   Matice *vysledek = vytvor_matici(matice_1.radky, matice_2.sloupce, 0);
   for (int i = 0; i < matice_1.radky; i++) {
