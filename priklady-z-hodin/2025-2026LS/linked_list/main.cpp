@@ -4,6 +4,7 @@
 struct Node {
   int data;
   Node *next;
+  Node *prev;
 };
 
 // ÚKOL 1: Přidání prvku na ZAČÁTEK seznamu
@@ -18,8 +19,10 @@ void insertFront(Node *&head, int value) {
   // Váš kód zde:
   Node *newNode = new Node;
   newNode->data = value;
-  // (*newNode).data =value;
   newNode->next = head;
+  newNode->prev = nullptr;
+  if (head != nullptr)
+    head->prev = newNode;
   head = newNode;
 }
 
@@ -30,7 +33,7 @@ void printList(Node *head) {
 
   // Váš kód zde:
   while (head != nullptr) {
-    std::cout << "Adress: " << head << " Data: " << head->data
+    std::cout << " Prev: " << head->prev << " Adress: " << head << " Data: " << head->data
               << " Next: " << head->next << " ->\n";
     head = head->next;
   }

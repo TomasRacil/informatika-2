@@ -138,7 +138,7 @@ Matice *secti_matice(const Matice &matice_1, const Matice &matice_2) {
 }
 
 Matice *nasob_matice(const Matice &matice_1, const Matice &matice_2) {
-  if (matice_1.sloupce != matice_2.radky) {
+  if (matice_1.radky != matice_2.sloupce) {
     std::cout << "Matice nejsou kompatibilni pro nasobeni." << std::endl;
     return nullptr;
   }
