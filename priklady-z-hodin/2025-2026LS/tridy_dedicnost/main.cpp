@@ -1,5 +1,4 @@
 #include <iostream>
-#include <memory>
 #include <string>
 #include <vector>
 
@@ -77,14 +76,13 @@ public:
 //      - Cílový objekt neovlivňujte.
 
 int main() {
-  // Inicializace simulačního registru
-  std::vector<std::unique_ptr<Robot>> arena;
+  // Inicializace simulačního registru pomocí standardních (surových) ukazatelů
+  std::vector<Robot*> arena;
 
   /* Odkomentovat po naprogramování:
-  arena.push_back(std::make_unique<KamikazeRobot>("BOOM-3000", 90));
-  arena.push_back(std::make_unique<LecitelRobot>("MedBot-9", 110, 20));
-  arena.push_back(std::make_unique<StrelnyRobot>("Sniper-X", 70, 2)); // 2
-  cykly, poté dobíjení
+  arena.push_back(new KamikazeRobot("BOOM-3000", 90));
+  arena.push_back(new LecitelRobot("MedBot-9", 110, 20));
+  arena.push_back(new StrelnyRobot("Sniper-X", 70, 2)); // 2 cykly, poté dobíjení
   */
 
   if (arena.empty()) {
@@ -124,7 +122,7 @@ int main() {
       for (size_t j = 1; j < arena.size(); ++j) {
         size_t indexCile = (i + j) % arena.size();
         if (arena[indexCile]->jeZivy()) {
-          cil = arena[indexCile].get();
+          cil = arena[indexCile];
           break;
         }
       }
@@ -141,7 +139,7 @@ int main() {
   Robot *vitez = nullptr;
   for (const auto &r : arena) {
     if (r->jeZivy())
-      vitez = r.get();
+      vitez = r;
   }
 
   if (vitez) {
@@ -149,6 +147,11 @@ int main() {
   } else {
     std::cout << "System ukoncen v dusledku kompletni anihilace vsech "
                  "subjektu.\n";
+  }
+
+  // Uvolnění dynamicky alokované paměti pro zamezení memory leakům
+  for (auto r : arena) {
+    delete r;
   }
 
   return 0;
