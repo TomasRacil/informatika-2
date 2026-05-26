@@ -46,6 +46,17 @@ public:
 //   3. Aplikujte poškození 100 jednotek na instanci samotnou
 //   (utrpPoskozeni(100)), což povede k její okamžité terminaci.
 
+class KamikazeRobot : public Robot {
+public:
+    KamikazeRobot(std::string jmeno, int zdravi) : Robot(jmeno, zdravi) {}
+
+    void provedUtok(Robot& cil) override {
+        std::cout << "  " << jmeno << " vybuchuje a bere s sebou vsechno kolem!\n";
+        cil.utrpPoskozeni(80);
+        utrpPoskozeni(100); // Zničí sám sebe
+    }
+};
+
 // TODO: Implementujte třídu LecitelRobot dědící z bázové třídy Robot
 // - Deklarujte privátní členskou proměnnou (např. int silaLeceni)
 // reprezentující míru regenerace integrity.
@@ -57,6 +68,21 @@ public:
 //   2. Inkrementujte stav zdraví (integrity) o definovanou hodnotu regenerace.
 //   3. Vypište aktuální úroveň integrity na standardní výstup.
 //   4. Cílový objekt ponechte beze změny (objekt neprovádí vnější interakci).
+
+class LecitelRobot : public Robot {
+private:
+    int silaLeceni;
+public:
+    LecitelRobot(std::string jmeno, int zdravi, int silaLeceni) 
+        : Robot(jmeno, zdravi), silaLeceni(silaLeceni) {}
+
+    void provedUtok(Robot& cil) override {
+        std::cout << "  " << jmeno << " ignoruje utok a opravuje sve obvody.\n";
+        zdravi += silaLeceni;
+        std::cout << "  " << jmeno << " se vylecil na " << zdravi << " hp.\n";
+        // Cíle si vůbec nevšímá
+    }
+};
 
 // TODO: Implementujte třídu StrelnyRobot dědící z bázové třídy Robot
 // - Deklarujte privátní atributy pro aktuální a maximální kapacitu aktivních
@@ -75,15 +101,34 @@ public:
 //      - Obnovte stav kapacity na maximální úroveň.
 //      - Cílový objekt neovlivňujte.
 
+class StrelnyRobot : public Robot {
+private:
+    int naboje;
+    int maxNaboju;
+
+public:
+    StrelnyRobot(std::string jmeno, int zdravi, int maxNaboju) 
+        : Robot(jmeno, zdravi), maxNaboju(maxNaboju), naboje(maxNaboju) {}
+
+    void provedUtok(Robot& cil) override {
+        if (naboje > 0) {
+            std::cout << "  " << jmeno << " pali ze sveho kanonu na robota " << cil.getJmeno() << "!\n";
+            cil.utrpPoskozeni(40);
+            naboje--;
+        } else {
+            std::cout << "  " << jmeno << " nema nabito! Cvakne naprazdno a musi jedno kolo nabijet.\n";
+            naboje = maxNaboju;
+        }
+    }
+};
+
 int main() {
   // Inicializace simulačního registru pomocí standardních (surových) ukazatelů
   std::vector<Robot*> arena;
 
-  /* Odkomentovat po naprogramování:
   arena.push_back(new KamikazeRobot("BOOM-3000", 90));
   arena.push_back(new LecitelRobot("MedBot-9", 110, 20));
-  arena.push_back(new StrelnyRobot("Sniper-X", 70, 2)); // 2 cykly, poté dobíjení
-  */
+  arena.push_back(new StrelnyRobot("Sniper-X", 70, 2));
 
   if (arena.empty()) {
     std::cout << "Chyba: Nebyly inicializovany zadne subjekty v registru!"
