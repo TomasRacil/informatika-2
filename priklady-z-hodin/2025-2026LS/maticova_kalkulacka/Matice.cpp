@@ -1,39 +1,49 @@
 #include "Matice.h"
-
-#include <iostream>
 #include <stdexcept>
+#include <type_traits>
 
-Matice::Matice(int radky, int sloupce, int inicializacni_hodnota)
+#ifndef MATICE_CPP
+#define MATICE_CPP
+
+template<typename T>
+Matice<T>::Matice(int radky, int sloupce) : radky(radky), sloupce(sloupce)
 {
-    this->radky = radky;
-    this->sloupce = sloupce;
-
-    matice = new int *[radky];
+    matice = new T *[radky];
     for (int i = 0; i < radky; ++i)
     {
-        matice[i] = new int[sloupce];
+        matice[i] = new T[sloupce];
         for (int j = 0; j < sloupce; j++)
         {
-            if (inicializacni_hodnota == NULL)
-            {
-                matice[i][j] = rand() % 10;
-            }
-            else
-            {
-                matice[i][j] = inicializacni_hodnota;
+            if constexpr (std::is_integral_v<T>) {
+                matice[i][j] = static_cast<T>(rand() % 10);
+            } else if constexpr (std::is_floating_point_v<T>) {
+                matice[i][j] = static_cast<T>(rand()% 100) / static_cast<T>(10);
             }
         }
     }
 }
 
-Matice::Matice(const Matice &other)
+template<typename T>
+Matice<T>::Matice(int radky, int sloupce, T inicializacni_hodnota) : radky(radky), sloupce(sloupce)
 {
-    this->radky = other.radky;
-    this->sloupce = other.sloupce;
-    this->matice = new int *[radky];
+    matice = new T *[radky];
+    for (int i = 0; i < radky; ++i)
+    {
+        matice[i] = new T[sloupce];
+        for (int j = 0; j < sloupce; j++)
+        {
+            matice[i][j] = inicializacni_hodnota;
+        }
+    }
+}
+
+template<typename T>
+Matice<T>::Matice(const Matice &other) : radky(other.radky), sloupce(other.sloupce)
+{
+    this->matice = new T *[radky];
     for (int i = 0; i < radky; i++)
     {
-        this->matice[i] = new int[sloupce];
+        this->matice[i] = new T[sloupce];
         for (int j = 0; j < sloupce; j++)
         {
             this->matice[i][j] = other.matice[i][j];
@@ -41,14 +51,15 @@ Matice::Matice(const Matice &other)
     }
 }
 
-void Matice::vypis_matici()
+template<typename T>
+void Matice<T>::vypis_matici()
 {
-    std::cout << "Matice:" << std::endl;
     if (matice == nullptr)
     {
         std::cout << "Matice je prazdna." << std::endl;
         return;
     }
+    std::cout << "Matice (" << radky << "x" << sloupce << "):" << std::endl;
     for (int i = 0; i < radky; i++)
     {
         for (int j = 0; j < sloupce; j++)
@@ -59,13 +70,14 @@ void Matice::vypis_matici()
     }
 }
 
-Matice Matice::secti_matice(const Matice &matice_2)
+template<typename T>
+Matice<T> Matice<T>::secti_matice(const Matice<T> &matice_2)
 {
     if (radky != matice_2.radky || sloupce != matice_2.sloupce)
     {
         throw std::runtime_error("Matice nejsou stejne velke.");
     }
-    Matice vysledek(radky, sloupce);
+    Matice<T> vysledek(radky, sloupce, static_cast<T>(0));
     for (int i = 0; i < radky; i++)
     {
         for (int j = 0; j < sloupce; j++)
@@ -76,47 +88,37 @@ Matice Matice::secti_matice(const Matice &matice_2)
     return vysledek;
 }
 
-Matice Matice::operator+(const Matice &matice_2)
+template<typename T>
+Matice<T> Matice<T>::operator+(const Matice<T> &matice_2)
 {
-    if (radky != matice_2.radky || sloupce != matice_2.sloupce)
-    {
-        throw std::runtime_error("Matice nejsou stejne velke.");
-    }
-    Matice vysledek(radky, sloupce);
-    for (int i = 0; i < radky; i++)
-    {
-        for (int j = 0; j < sloupce; j++)
-        {
-            vysledek.matice[i][j] = matice[i][j] + matice_2.matice[i][j];
-        }
-    }
-    return vysledek;
+    return secti_matice(matice_2);
 }
 
-Matice Matice::nasob_matice(const Matice &matice_2)
+template<typename T>
+Matice<T> Matice<T>::nasob_matice(const Matice<T> &matice_2)
 {
     if (sloupce != matice_2.radky)
     {
         throw std::runtime_error("Matice nejsou kompatibilni pro nasobeni.");
     }
-    Matice vysledek = Matice(radky, matice_2.sloupce, 0);
+    Matice<T> vysledek(radky, matice_2.sloupce, static_cast<T>(0));
     for (int i = 0; i < radky; i++)
     {
         for (int j = 0; j < matice_2.sloupce; j++)
         {
             for (int k = 0; k < sloupce; k++)
             {
-                vysledek.matice[i][j] +=
-                    (matice[i][k] * matice_2.matice[k][j]);
+                vysledek.matice[i][j] += (matice[i][k] * matice_2.matice[k][j]);
             }
         }
     }
     return vysledek;
 }
 
-Matice Matice::transponuj_matici()
+template<typename T>
+Matice<T> Matice<T>::transponuj_matici()
 {
-    Matice vysledek = Matice(sloupce, radky, 0);
+    Matice<T> vysledek(sloupce, radky, static_cast<T>(0));
     for (int i = 0; i < sloupce; i++)
     {
         for (int j = 0; j < radky; j++)
@@ -127,9 +129,10 @@ Matice Matice::transponuj_matici()
     return vysledek;
 }
 
-Matice Matice::skalarni_nasobeni(int scalar)
+template<typename T>
+Matice<T> Matice<T>::skalarni_nasobeni(T scalar)
 {
-    Matice vysledek = Matice(radky, sloupce, 0);
+    Matice<T> vysledek(radky, sloupce, static_cast<T>(0));
     for (int i = 0; i < radky; i++)
     {
         for (int j = 0; j < sloupce; j++)
@@ -140,9 +143,10 @@ Matice Matice::skalarni_nasobeni(int scalar)
     return vysledek;
 }
 
-int Matice::determinant_matice()
+template<typename T>
+T Matice<T>::determinant_matice()
 {
-    int vysledek = 0;
+    T vysledek = 0;
     for (int i = 0; i < radky; i++)
     {
         for (int j = 0; j < sloupce; j++)
@@ -153,20 +157,24 @@ int Matice::determinant_matice()
     return vysledek;
 }
 
-Matice::~Matice()
+template<typename T>
+Matice<T>::~Matice()
 {
-    for (int i = 0; i < radky; ++i)
+    if (matice != nullptr)
     {
-        delete[] matice[i];
-        matice[i] = nullptr;
+        for (int i = 0; i < radky; ++i)
+        {
+            delete[] matice[i];
+        }
+        delete[] matice;
+        matice = nullptr;
     }
-    delete[] matice;
-    matice = nullptr;
 }
 
-std::ostream &operator<<(std::ostream &os, const Matice &m)
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const Matice<T> &m)
 {
-    os << "Matice:" << std::endl;
+    os << "Matice (" << m.radky << "x" << m.sloupce << "):" << std::endl;
     for (int i = 0; i < m.radky; i++)
     {
         for (int j = 0; j < m.sloupce; j++)
@@ -177,3 +185,5 @@ std::ostream &operator<<(std::ostream &os, const Matice &m)
     }
     return os;
 }
+
+#endif
