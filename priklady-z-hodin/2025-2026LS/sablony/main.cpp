@@ -15,6 +15,21 @@ void vymen(T& a, T& b){
     a=pomcna;
 }
 
+template<typename T>
+class Schranka
+{
+private:
+    T data;
+    /* data */
+public:
+    Schranka(T data);
+    void vloz(T data);
+    T vyzvedni();
+    ~Schranka();
+};
+
+
+
 
 int main(){
     int a = 2;
@@ -39,4 +54,27 @@ int main(){
     std::cout<<s1<<":"<<s2<<std::endl;
 
     return 0;
+}
+
+template <typename T>
+Schranka<T>::Schranka(T data)
+{
+    this->data = data;
+}
+
+template <typename T>
+void Schranka<T>::vloz(T data)
+{
+    this->data = data;
+}
+
+template <typename T>
+T Schranka<T>::vyzvedni()
+{
+    return data;
+}
+
+template <typename T>
+Schranka<T>::~Schranka()
+{
 }
