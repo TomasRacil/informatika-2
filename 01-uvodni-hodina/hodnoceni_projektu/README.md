@@ -86,8 +86,6 @@ Může jít například o:
 * Pokročilé techniky (multithreading, síťová vrstva, vlastní optimalizace).
 * Výjimečně propracované grafické rozhraní nebo herní design.
 
-*(Celkový součet bodů z řádných kategorií a bonusů nemůže překročit 100 bodů pro zápis výsledku, ale bonusové body slouží k eliminaci drobných ztrát v hlavních sekcích).*
-
 ---
 
 ## Pravidla Kalibrace a Integrita (AI & Plagiáty)
