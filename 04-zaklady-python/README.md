@@ -41,11 +41,13 @@ Jupyter Notebooky umožňují spouštět kód po částech (buňkách) a vidět 
 
 ## **Obsah sekce**
 
-1. [Syntaxe, výstup a komentáře](./01-syntaxe-komentare/)  
-2. [Proměnné a datové typy](./02-proměnné-datové-typy/)
-3. [Operátory](./03-operatory/)  
-4. [Podmínky a vetvení](./04-podmínky-větvení/)
-5. [Cykly](./05-cykly/)
-6. [Datové struktury](./06-datove-struktury/)
-7. [Prace se soubory](./07-prace-se-soubory/)
-8. [Funkce](./08-funkce/)
+| Kapitola | Téma | Popis | Stav |
+| :--- | :--- | :--- | :---: |
+| 1. [Syntaxe, výstup a komentáře](./01-syntaxe-komentare/) | Základní syntaxe | Výpis do konzole (`print`), komentáře, struktura skriptu | Hotovo |
+| 2. [Proměnné a datové typy](./02-proměnné-datové-typy/) | Datové typy a f-stringy | Dynamické typování, skalární typy, přetypování, moderní f-stringy | Hotovo |
+| 3. [Operátory](./03-operatory/) | Operátory | Aritmetické, logické, porovnávací a přiřazovací operátory | Hotovo |
+| 4. [Podmínky a větvení](./04-podmínky-větvení/) | Řízení toku | Konstrukce `if-elif-else`, logické výrazy, ternární operátor | Hotovo |
+| 5. [Cykly](./05-cykly/) | Iterace | Cykly `for` a `while`, funkce `range`, `break`, `continue`, `else` u cyklů | Hotovo |
+| 6. [Datové struktury](./06-datove-struktury/) | Kolekce | Seznamy (`list`), n-tice (`tuple`), slovníky (`dict`), množiny (`set`), list comprehension | Hotovo |
+| 7. [Práce se soubory](./07-prace-se-soubory/) | Text, CSV a JSON | Kontextový manažer `with`, práce s textovými soubory<br>*Bude doplněno:* formát **CSV** (modul `csv`, `DictReader`) a formát **JSON** (modul `json`) | Rozpracováno |
+| 8. [Funkce](./08-funkce/) | Funkce a scope | Definice funkcí, parametry, návratové hodnoty, `*args`, `**kwargs`, lambda funkce, lokální a globální scope | Hotovo |

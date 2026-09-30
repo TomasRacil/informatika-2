@@ -22,38 +22,36 @@ Tento předmět je zaměřen převážně na jazyk **C++** s menší sekcí věn
 Zápočet bude udělen za aktivní účast a především za odevzdání průběžné práce a projektů.
 * **Splnění požadavků kolegy** (v rámci sekce C#).
 * **Vlastní projekt v C++:** Odevzdání samostatného projektu demonstrujícího získané dovednosti.
-* **Průběžné úkoly:** Celkem jich bude zadáno 6. K zápočtu z nich musíte dosáhnout průměrného hodnocení **nad 50 %**.
+* **Průběžné testy:** Celkem jich bude zadáno 6. K zápočtu z nich musíte dosáhnout průměrného hodnocení **nad 50 %**.
 
-### **Zkouška a bonusové body ke zkoušce**
-Skládá se z praktické a ústní části. Tyto zkouškové body se uplatňují až tehdy, přesáhne-li student zkouškové minimum pro splnění zkoušky, což je **nad 60 %**.
-Pokud dosáhnete tohoto minima a složíte zkoušku, přičítají se různé bonusy ze semestru a ty mohou vylepšit vaši výslednou známku:
-* **Testy v průběhu semestru:** Až 15 % navíc k výsledku zkoušky, pokud jsou všechny na 100 %.
-* **Hodnocení od kolegy (vyučujícího C#):** Až 10 % podle jeho průběžného hodnocení.
-* **Projekt v C++:** Až 15 % navíc (při hodnocení projektu na 100 %).
-* **Další bonusy:** Za proaktivní přístup a mimořádnou činnost ve výuce.
+### **Zkouška a hodnocení**
+Výslednou známku z předmětu **rozhoduje pouze zkouška** (skládá se z praktické a ústní části). Minimální hranice pro úspěšné složení zkoušky je **nad 60 %**.
+
+* **Proč projekt a testy nepřináší body ke zkoušce?**  
+  Z prostého důvodu: většina studentů by pro vytvoření projektu pouze využila LLM (AI generátory kódu). Projekt proto slouží výhradně k procvičení a jako **podmínka pro zápočet** (kde se při obhajobě ověří vaše porozumění kódu). K samotné zkoušce se za ně žádné body nepřičítají.
+* **Plusové body v průběhu semestru:**  
+  Během semestru budou vypsány příležitosti, jak získat **plusové body ke zkoušce** (např. za aktivitu ve výuce, proaktivní přístup či dobrovolné bonusové výzvy). Tyto body se započítávají až po úspěšném složení zkoušky (překročení minima 60 %) a mohou vylepšit vaši výslednou známku.
 
 ---
 
 ## **3. Informatika 2 (3. semestr)**
 
-Podmínky budou podobné jako v předchozím semestru a bude zaměřen zejména na jazyk **Python**.
+Podmínky fungují na stejném principu a předmět je zaměřen na jazyk **Python**.
 
 ### **Způsob udělení zápočtu**
-* **Odevzdání úkolů (Git/GitHub):** Místo průběžných testů se budou úkoly (9 až 12 úkolů) vypracovávat přes GitHub formou Pull Requestů. **Pokud je úkol odevzdán po termínu (nejzazší termín je den zadání následujícího úkolu), student za něj nedostane žádné body, ale stále platí povinnost ho odevzdat.**
-* **Vlastní projekt:** V Pythonu.
+* **Povinné domácí úkoly (Git/GitHub):** Místo testů se budou úkoly (9 až 12 úkolů) vypracovávat přes GitHub formou Pull Requestů. Všechny úkoly jsou **povinné pro udělení zápočtu a musí být odevzdány v termínu**.
+* **Vlastní projekt v Pythonu:** Odevzdání a obhajoba projektu je **klíčovou podmínkou k zapsání zápočtu**. Bez obhájeného projektu nelze zápočet udělit.
 
-
-### **Zkouška a bonusové body ke zkoušce**
-I zde platí, že bonusy ze semestru se aplikují, pouze pokud zkoušku napíšete minimálně na 60 %.
-* **Domácí úkoly:** Až 20 % k výsledku zkoušky.
-* **Projekt:** Až 20 % k výsledku zkoušky.
-* **Další bonusy:** Za proaktivní přístup a mimořádnou činnost ve výuce.
+### **Zkouška a hodnocení**
+Stejně jako u Informatiky 1 rozhoduje o výsledné známce **pouze zkouška** (minimum pro splnění je **nad 60 %**).
+* **Žádné body za projekt a úkoly ke zkoušce:** Z důvodu snadného zneužití LLM slouží projekt a úkoly čistě pro zápočet a k praktickému osvojení látky.
+* **Plusové body:** V průběhu semestru bude možné získat plusové body (za aktivní přístup ve výuce, bonusové miniprojekty či výzvy), které mohou vylepšit známku po splnění zkouškového minima.
 
 ---
 
 ## **4. Klasifikace (Společná)**
 
-U obou předmětů platí následující klasifikační stupnice (k zisku ze zkoušky po započtení použitelných bonusů):
+U obou předmětů platí následující klasifikační stupnice (k zisku ze zkoušky po započtení případných plusových bodů):
 
 * **A:** > 92 %
 * **B:** > 84 %
@@ -61,7 +59,7 @@ U obou předmětů platí následující klasifikační stupnice (k zisku ze zko
 * **D:** > 68 %
 * **E:** > 60 %
 
-Příklad pro Informatiku 1: *Představme si, že získáte ze zkoušky jako takové 61 % (Máte E). Ale máte zároveň perfektně splněné testy (+15 %), plný počet od kolegy (+10 %) a projekt na jedničku (+15 %). Dohromady se vám započítá 101 % a máte známku A.*
+Příklad: *Představme si, že získáte ze zkoušky 62 % (což odpovídá známce E). Pokud jste během semestru získali například +15 % plusových bodů za aktivitu a bonusové výzvy, výsledné hodnocení bude 77 %, což vám vylepší známku na C.*
 
 ---
 
@@ -132,7 +130,7 @@ Abychom viděli rozdíly mezi jazyky v praxi, podívejte se na jednoduchý [**mo
 
 ## **9. Harmonogram a Co dál?**
 
-* **Harmonogram:** Aktuální a detailní plán výuky (napříč týdny) je dostupný z tabulky. Harmonogram je orientační. Materiály, úkoly a příklady k nim budou postupně přidávány a zpřístupňovány.
+* **Harmonogram:** Aktuální a detailní plán výuky (napříč týdny) je dostupný v [**detailním harmonogramu semestru**](./harmonogram-2026-2027ZS.md). Harmonogram je orientační. Materiály, úkoly a příklady k nim budou postupně přidávány a zpřístupňovány.
 * **Pro studenty obou předmětů (Skupinová spolupráce):** Během první nebo druhé hodiny proběhne rozdělení do znalostně vyrovnaných skupin. V průběhu semestru se budeme setkávat se zadáními, která budete řešit společně v těchto týmech, aby se podpořila vzájemná spolupráce a sdílení zkušeností.
 * **Pro studenty Informatiky 1 (Úvodní hodina):** Na první hodině proběhne **úvodní písemný test**. Jde o krátký úkol zaměřený na ověření vašeho algoritmického myšlení. Jelikož jste v předchozím semestru absolvovali výuku v jazyce C, můžete k řešení využít jeho syntaxi, jakýkoliv jiný jazyk, který ovládáte, nebo zvolit volnou formu (pseudokód). Cílem je zjištění úrovně algoritmického myšlení studentů, které ještě osobně neznám.
 * **Příprava na příští hodinu:** Podíváme se na základní syntaxi, proměnné, datové typy a první jednoduché programy.
