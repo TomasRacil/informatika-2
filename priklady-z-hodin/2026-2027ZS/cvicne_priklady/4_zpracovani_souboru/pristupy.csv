@@ -1,0 +1,6 @@
+cas;cesta;kod;velikost
+10:14:02;/api/data;200;1420
+10:14:05;/login;401;320
+10:15:11;/api/data;200;8900
+10:16:40;/admin;403;150
+10:17:00;/api/users;500;0

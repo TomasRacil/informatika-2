@@ -1,0 +1,3 @@
+soucet prenesenych dat: 10790
+pocet chybovych kodu: 3
+vytizenost endpointu: {'/api/data': 2, '/login': 1, '/admin': 1, '/api/users': 1}
