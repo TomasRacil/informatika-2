@@ -59,9 +59,9 @@ class Waypoint(Lod):
     
 class Lod_2(Lod):
     def __init__(self):
-        self.north = 0
-        self.east = 0
-        self.waypoint = Waypoint()
+        self.north:int = 0
+        self.east:int = 0
+        self.waypoint:Waypoint = Waypoint()
     
     def move(self, direction, value):
         if direction =='F':
