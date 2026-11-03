@@ -1,4 +1,6 @@
 
+from __future__ import annotations
+
 class Cas:
     def __init__(self, hodiny:int, minuty:int):
         self.minuty = minuty

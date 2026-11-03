@@ -121,3 +121,4 @@ Složitost se obvykle vyjadřuje pomocí notace "velké O", která popisuje horn
 * **Časová složitost:** Průměrná $O(n \log n)$, nejhorší případ $O(n^2)$ (při špatné volbě pivota, např. na již seřazeném poli).
 * **Stabilita:** Nestabilní
 * **Využití:** V praxi často nejrychlejší algoritmus. Řadí "na místě" (nepotřebuje další pole).
+

@@ -62,6 +62,34 @@ Jako typ lze použít i název vlastní třídy.
 def zpracuj_studenta(student: Student) -> None:  
     ...  
 ```
+
+### **5. Dopředné reference a `from __future__ import annotations` (PEP 563)**
+
+Python standardně vyhodnocuje typové anotace v okamžiku načítání kódu. Pokud uvnitř třídy odkazujete na třídu samotnou (nebo na třídu, která je definována až níže v souboru), dojde k chybě:
+
+```python
+class Cas:
+    def __init__(self, hodiny: int, minuty: int):
+        self.hodiny = hodiny
+        self.minuty = minuty
+
+    # CHYBA: NameError: name 'Cas' is not defined
+    def __add__(self, other: Cas) -> Cas:
+        ...
+```
+
+Dříve se toto muselo obcházet zápisem názvu typu do uvozovek: `def __add__(self, other: 'Cas') -> 'Cas':`.
+
+Moderním řešením je přidat na **úplně první řádek souboru** direktivu:
+```python
+from __future__ import annotations
+```
+
+Tento import zapíná **odložené vyhodnocování anotací**. Všechny typy se za běhu uloží jako textové řetězce a nevyhodnocují se ihned. Díky tomu:
+* Lze uvnitř metod třídy odkazovat na třídu samotnou bez uvozovek.
+* Snadno se typují rekurzivní struktury (spojové seznamy, stromy).
+* Zrychluje se start programů s rozsáhlými typovými definicemi.
+
 ---
 ## **Cvičení**
 
