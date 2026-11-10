@@ -1,6 +1,7 @@
 import functools
 from time import sleep, perf_counter
 import logging
+from random import randint
 
 logging.basicConfig(
         level=logging.DEBUG,
@@ -40,4 +41,7 @@ def cekej(cas:int):
     
 
 if __name__ == "__main__":
+    cisla = [randint(0, 1000000) for i in range(1000)]
+        
     cekej(2)
+    print(cisla)
